@@ -17,13 +17,23 @@ A comprehensive FastAPI-based hospitality management system with AI-powered sent
 - **AI/ML**: Hugging Face Transformers (DistilBERT)
 - **Database**: JSON files (mock CRM data)
 - **Alerts**: Slack Webhooks
+- **Authentication**: Python-JOSE with JWT tokens
+- **Password Hashing**: Passlib with bcrypt
+- **Data Processing**: Pandas, NumPy
+- **Machine Learning**: Scikit-learn
+- **Visualization**: Matplotlib, Seaborn, Plotly
+- **Web Server**: Uvicorn (ASGI server)
+- **HTTP Client**: Requests
+- **Environment Management**: Python-dotenv
+- **File Operations**: Aiofiles
+- **Real-time Communication**: WebSockets
 
 ## Local Development Setup
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repository-url>
-   cd Infosys
+   git clone https://github.com/BSRohit20/Infosys-Project.git
+   cd Infosys-Project
    ```
 
 2. **Create a virtual environment**
@@ -47,8 +57,8 @@ A comprehensive FastAPI-based hospitality management system with AI-powered sent
    ```
 
 5. **Set up environment variables**
-   - Copy `.env.example` to `.env` (if it exists)
-   - Configure necessary variables
+   - Create a `.env` file in the root directory
+   - Configure necessary variables for your local setup
 
 6. **Run the application**
    - Using convenience scripts:
@@ -66,8 +76,7 @@ A comprehensive FastAPI-based hospitality management system with AI-powered sent
 
 7. **Access the application**
    - Open your browser to [http://localhost:8000](http://localhost:8000)
-   - Admin login: username `admin`, password `admin123`
-   - Guest login: username `rohit`, password `abc123`
+   - Use the admin interface to create guest accounts and manage the system
    ```bash
    uvicorn app.main:app --reload
    ```
