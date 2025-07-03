@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerts & Notifications - AI Guest Experience</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', path='/css/main.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-hotel"></i> LuxeAI
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/admin">Dashboard</a>
+                <a class="nav-link" href="/admin/analytics">Analytics</a>
+                <a class="nav-link active" href="/admin/alerts">Alerts</a>
+                <a class="nav-link" href="/logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="mb-4">
+                    <i class="fas fa-bell text-warning"></i>
+                    Alerts & Notifications
+                </h1>
+            </div>
+        </div>
+
+        <!-- Alert Statistics -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card bg-danger text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h4 class="card-title">Critical</h4>
+                                <h2 class="mb-0">2</h2>
+                            </div>
+                            <div class="align-self-center">
+                                <i class="fas fa-exclamation-triangle fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-warning text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h4 class="card-title">High</h4>
+                                <h2 class="mb-0">5</h2>
+                            </div>
+                            <div class="align-self-center">
+                                <i class="fas fa-exclamation fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-info text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h4 class="card-title">Medium</h4>
+                                <h2 class="mb-0">12</h2>
+                            </div>
+                            <div class="align-self-center">
+                                <i class="fas fa-info-circle fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-success text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h4 class="card-title">Resolved</h4>
+                                <h2 class="mb-0">34</h2>
+                            </div>
+                            <div class="align-self-center">
+                                <i class="fas fa-check-circle fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Alerts -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-list"></i>
+                            Recent Alerts
+                        </h5>
+                        <div>
+                            <button class="btn btn-sm btn-outline-primary" id="refresh-alerts">
+                                <i class="fas fa-sync-alt"></i>
+                                Refresh
+                            </button>
+                            <button class="btn btn-sm btn-success" id="mark-all-read">
+                                <i class="fas fa-check-double"></i>
+                                Mark All Read
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="alerts-container">
+                            <div class="text-center">
+                                <div class="spinner-border" role="status">
+                                    <span class="visually-hidden">Loading alerts...</span>
+                                </div>
+                                <p class="mt-2">Loading recent alerts...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alert Filters -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-filter"></i>
+                            Alert Filters
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label class="form-label">Severity</label>
+                                <select class="form-select" id="severityFilter">
+                                    <option value="">All Severities</option>
+                                    <option value="critical">Critical</option>
+                                    <option value="high">High</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="low">Low</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Type</label>
+                                <select class="form-select" id="typeFilter">
+                                    <option value="">All Types</option>
+                                    <option value="sentiment">Negative Sentiment</option>
+                                    <option value="service">Service Request</option>
+                                    <option value="recommendation">Recommendation</option>
+                                    <option value="feedback">Positive Feedback</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Status</label>
+                                <select class="form-select" id="statusFilter">
+                                    <option value="">All Statuses</option>
+                                    <option value="open">Open</option>
+                                    <option value="in_progress">In Progress</option>
+                                    <option value="resolved">Resolved</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Time Range</label>
+                                <select class="form-select" id="timeFilter">
+                                    <option value="">All Time</option>
+                                    <option value="1h">Last Hour</option>
+                                    <option value="24h">Last 24 Hours</option>
+                                    <option value="7d">Last 7 Days</option>
+                                    <option value="30d">Last 30 Days</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <button class="btn btn-primary" onclick="applyFilters()">
+                                    <i class="fas fa-search"></i> Apply Filters
+                                </button>
+                                <button class="btn btn-secondary ms-2" onclick="clearFilters()">
+                                    <i class="fas fa-times"></i> Clear Filters
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        function viewAlert(alertId) {
+            alert('Viewing alert #' + alertId + ' - Full details would be shown in a modal');
+        }
+
+        function resolveAlert(alertId) {
+            if (confirm('Mark alert #' + alertId + ' as resolved?')) {
+                alert('Alert #' + alertId + ' marked as resolved');
+                // In a real app, this would make an API call
+                location.reload();
+            }
+        }
+
+        function applyFilters() {
+            const severity = document.getElementById('severityFilter').value;
+            const type = document.getElementById('typeFilter').value;
+            const status = document.getElementById('statusFilter').value;
+            const time = document.getElementById('timeFilter').value;
+            
+            console.log('Applying filters:', { severity, type, status, time });
+            alert('Filters applied! (In a real app, this would filter the table)');
+        }
+
+        // Load alerts on page load
+        loadAlerts();
+
+        // Event listeners
+        document.getElementById('refresh-alerts').addEventListener('click', loadAlerts);
+        document.getElementById('mark-all-read').addEventListener('click', markAllAlertsRead);
+
+        async function loadAlerts() {
+            try {
+                const response = await fetch('/api/analytics/alerts');
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    displayAlerts(data.data.alerts);
+                    updateAlertCounters(data.data);
+                } else {
+                    showAlertsError('Failed to load alerts');
+                }
+            } catch (error) {
+                console.error('Error loading alerts:', error);
+                showAlertsError('Error connecting to server');
+            }
+        }
+
+        function displayAlerts(alerts) {
+            const container = document.getElementById('alerts-container');
+            
+            if (!alerts || alerts.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center text-muted">
+                        <i class="fas fa-check-circle fa-3x mb-3 text-success"></i>
+                        <h5>No Active Alerts</h5>
+                        <p>All clear! No alerts require attention at this time.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const alertsHTML = `
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Priority</th>
+                                <th>Type</th>
+                                <th>Message</th>
+                                <th>Guest</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${alerts.map(alert => `
+                                <tr class="${alert.status === 'unread' ? 'table-warning' : ''}">
+                                    <td>${getPriorityBadge(alert.priority || alert.severity)}</td>
+                                    <td>${alert.type || 'Feedback'}</td>
+                                    <td>
+                                        <strong>${alert.title || alert.subject || 'Alert'}</strong><br>
+                                        <small class="text-muted">${alert.message || alert.feedback_text || 'No details available'}</small>
+                                    </td>
+                                    <td>${alert.guest_name || alert.guest_id || 'Unknown'}</td>
+                                    <td>${getTimeAgo(alert.created_at || alert.timestamp)}</td>
+                                    <td>${getStatusBadge(alert.status || 'open')}</td>
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            <button class="btn btn-sm btn-primary" onclick="viewAlert('${alert.alert_id || alert.feedback_id}')">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            ${alert.status !== 'read' ? `
+                                                <button class="btn btn-sm btn-success" onclick="markAlertRead('${alert.alert_id}')">
+                                                    <i class="fas fa-check"></i>
+                                                </button>
+                                            ` : ''}
+                                        </div>
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+
+            container.innerHTML = alertsHTML;
+        }
+
+        function updateAlertCounters(data) {
+            // Update the overview cards with real data
+            const totalAlerts = data.total_alerts || 0;
+            const unreadCount = data.unread_count || 0;
+            
+            // You can update the counter cards here if they have IDs
+            console.log(`Total alerts: ${totalAlerts}, Unread: ${unreadCount}`);
+        }
+
+        function getPriorityBadge(priority) {
+            switch (priority?.toLowerCase()) {
+                case 'critical':
+                case 'high':
+                    return '<span class="badge bg-danger">High</span>';
+                case 'medium':
+                    return '<span class="badge bg-warning">Medium</span>';
+                case 'low':
+                    return '<span class="badge bg-info">Low</span>';
+                default:
+                    return '<span class="badge bg-secondary">Unknown</span>';
+            }
+        }
+
+        function getStatusBadge(status) {
+            switch (status?.toLowerCase()) {
+                case 'unread':
+                case 'open':
+                    return '<span class="badge bg-warning">Open</span>';
+                case 'read':
+                case 'in progress':
+                    return '<span class="badge bg-info">In Progress</span>';
+                case 'resolved':
+                    return '<span class="badge bg-success">Resolved</span>';
+                default:
+                    return '<span class="badge bg-secondary">Unknown</span>';
+            }
+        }
+
+        function getTimeAgo(timestamp) {
+            if (!timestamp) return 'Unknown';
+            
+            const now = new Date();
+            const alertTime = new Date(timestamp);
+            const diffInMinutes = Math.floor((now - alertTime) / (1000 * 60));
+            
+            if (diffInMinutes < 1) {
+                return 'Just now';
+            } else if (diffInMinutes < 60) {
+                return `${diffInMinutes} minute${diffInMinutes > 1 ? 's' : ''} ago`;
+            } else {
+                const diffInHours = Math.floor(diffInMinutes / 60);
+                if (diffInHours < 24) {
+                    return `${diffInHours} hour${diffInHours > 1 ? 's' : ''} ago`;
+                } else {
+                    const diffInDays = Math.floor(diffInHours / 24);
+                    return `${diffInDays} day${diffInDays > 1 ? 's' : ''} ago`;
+                }
+            }
+        }
+
+        async function markAlertRead(alertId) {
+            try {
+                const response = await fetch(`/api/feedback/alerts/${alertId}/mark-read`, {
+                    method: 'POST'
+                });
+                
+                if (response.ok) {
+                    showAlert('Alert marked as read', 'success');
+                    loadAlerts(); // Refresh the list
+                } else {
+                    showAlert('Failed to mark alert as read', 'error');
+                }
+            } catch (error) {
+                showAlert('Error marking alert as read', 'error');
+            }
+        }
+
+        async function markAllAlertsRead() {
+            try {
+                // This would need to be implemented in the API
+                showAlert('Feature coming soon: Mark all alerts as read', 'info');
+            } catch (error) {
+                showAlert('Error marking all alerts as read', 'error');
+            }
+        }
+
+        function viewAlert(alertId) {
+            // Show alert details in a modal or navigate to detail page
+            showAlert(`Viewing alert: ${alertId}`, 'info');
+        }
+
+        function showAlertsError(message) {
+            document.getElementById('alerts-container').innerHTML = `
+                <div class="alert alert-danger text-center">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    ${message}
+                </div>
+            `;
+        }
+
+        function clearFilters() {
+            document.getElementById('severityFilter').value = '';
+            document.getElementById('typeFilter').value = '';
+            document.getElementById('statusFilter').value = '';
+            document.getElementById('timeFilter').value = '';
+            alert('Filters cleared!');
+        }
+
+        // Auto-refresh alerts every 30 seconds
+        setInterval(() => {
+            console.log('Auto-refreshing alerts...');
+            loadAlerts();
+        }, 30000);
+    </script>
+</body>
+</html>

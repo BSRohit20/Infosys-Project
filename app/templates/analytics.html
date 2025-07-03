@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Analytics - AI Guest Experience</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', path='/css/main.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-hotel"></i> LuxeAI
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/admin">Dashboard</a>
+                <a class="nav-link active" href="/admin/analytics">Analytics</a>
+                <a class="nav-link" href="/admin/alerts">Alerts</a>
+                <a class="nav-link" href="/logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="mb-4">
+                    <i class="fas fa-chart-line text-success"></i>
+                    Advanced Analytics & AI Insights
+                </h1>
+            </div>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card bg-primary text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h4 class="card-title">Sentiment Score</h4>
+                                <h2 class="mb-0">8.4/10</h2>
+                                <small>+0.3 this week</small>
+                            </div>
+                            <div class="align-self-center">
+                                <i class="fas fa-smile fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-success text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h4 class="card-title">Guest Satisfaction</h4>
+                                <h2 class="mb-0">94%</h2>
+                                <small>+2% this month</small>
+                            </div>
+                            <div class="align-self-center">
+                                <i class="fas fa-thumbs-up fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-info text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h4 class="card-title">AI Recommendations</h4>
+                                <h2 class="mb-0">156</h2>
+                                <small>This week</small>
+                            </div>
+                            <div class="align-self-center">
+                                <i class="fas fa-robot fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-warning text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h4 class="card-title">Revenue Impact</h4>
+                                <h2 class="mb-0">$12.4K</h2>
+                                <small>From AI insights</small>
+                            </div>
+                            <div class="align-self-center">
+                                <i class="fas fa-dollar-sign fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row 1 -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-chart-line"></i>
+                            Sentiment Analysis Over Time
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="sentimentChart" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-chart-pie"></i>
+                            Feedback Categories
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="categoryChart" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row 2 -->
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-chart-bar"></i>
+                            Guest Experience Metrics
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="experienceChart" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-brain"></i>
+                            AI Performance
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Sentiment Accuracy</label>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" style="width: 96%">96%</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Recommendation Success</label>
+                            <div class="progress">
+                                <div class="progress-bar bg-info" style="width: 89%">89%</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Prediction Accuracy</label>
+                            <div class="progress">
+                                <div class="progress-bar bg-warning" style="width: 92%">92%</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Response Time</label>
+                            <div class="progress">
+                                <div class="progress-bar bg-primary" style="width: 85%">85%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Insights Table -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-lightbulb"></i>
+                            Latest AI Insights & Recommendations
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Insight</th>
+                                        <th>Confidence</th>
+                                        <th>Impact</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="badge bg-primary">Sentiment</span></td>
+                                        <td>Guests are particularly satisfied with spa services this week</td>
+                                        <td><span class="badge bg-success">High (94%)</span></td>
+                                        <td>+$2.3K Revenue</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary">View Details</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge bg-warning">Trend</span></td>
+                                        <td>Room service complaints increasing in Building A</td>
+                                        <td><span class="badge bg-warning">Medium (78%)</span></td>
+                                        <td>Risk Alert</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-warning">Take Action</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge bg-info">Opportunity</span></td>
+                                        <td>Guests interested in local tours show higher satisfaction</td>
+                                        <td><span class="badge bg-success">High (91%)</span></td>
+                                        <td>+15% Satisfaction</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-info">Implement</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="badge bg-success">Prediction</span></td>
+                                        <td>Weekend bookings likely to increase by 12%</td>
+                                        <td><span class="badge bg-success">High (88%)</span></td>
+                                        <td>Staff Planning</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-success">Plan Ahead</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Sentiment Analysis Chart
+        const sentimentCtx = document.getElementById('sentimentChart').getContext('2d');
+        new Chart(sentimentCtx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Sentiment Score',
+                    data: [7.2, 8.1, 7.8, 8.4, 8.7, 9.1, 8.4],
+                    borderColor: 'rgb(75, 192, 192)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10
+                    }
+                }
+            }
+        });
+
+        // Category Chart
+        const categoryCtx = document.getElementById('categoryChart').getContext('2d');
+        new Chart(categoryCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Service', 'Amenities', 'Food', 'Location', 'Value'],
+                datasets: [{
+                    data: [35, 25, 20, 12, 8],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.8)',
+                        'rgba(54, 162, 235, 0.8)',
+                        'rgba(255, 205, 86, 0.8)',
+                        'rgba(75, 192, 192, 0.8)',
+                        'rgba(153, 102, 255, 0.8)'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        // Experience Metrics Chart
+        const experienceCtx = document.getElementById('experienceChart').getContext('2d');
+        new Chart(experienceCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Check-in', 'Room Quality', 'Dining', 'Spa', 'Concierge', 'Check-out'],
+                datasets: [{
+                    label: 'Satisfaction Score',
+                    data: [8.5, 9.2, 8.8, 9.4, 8.1, 8.7],
+                    backgroundColor: 'rgba(54, 162, 235, 0.8)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10
+                    }
+                }
+            }
+        });
+
+        // Auto-refresh data every 60 seconds
+        setInterval(() => {
+            console.log('Refreshing analytics data...');
+            // In a real app, this would fetch new data and update charts
+        }, 60000);
+    </script>
+</body>
+</html>

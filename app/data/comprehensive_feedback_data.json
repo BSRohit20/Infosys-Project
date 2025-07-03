@@ -1,0 +1,453 @@
+{
+  "feedback": [
+    {
+      "feedback_id": "FB2001",
+      "guest_id": "G2001",
+      "customer_id": "customer_001",
+      "rating": 5,
+      "comment": "Outstanding business facilities! The executive suite was perfect for my work needs. High-speed internet was flawless, the ergonomic workspace was exactly what I requested, and the concierge team arranged my meetings seamlessly. The early check-in was processed without any issues. Truly exceptional service that made my business trip both productive and comfortable.",
+      "category": "business_services",
+      "feedback_type": "review",
+      "source": "mobile_app",
+      "sentiment": {
+        "score": 0.94,
+        "label": "POSITIVE",
+        "confidence": 0.97,
+        "keywords": [
+          "outstanding",
+          "perfect",
+          "flawless",
+          "exceptional",
+          "seamless"
+        ]
+      },
+      "timestamp": "2024-12-24T16:20:00Z",
+      "processed": true,
+      "response_required": false,
+      "staff_response": "Thank you Ms. Chen for your wonderful feedback! We're delighted that our business facilities met your expectations. We look forward to welcoming you back soon.",
+      "response_date": "2024-12-24T18:30:00Z",
+      "hotel_department": "business_center",
+      "room_number": "2501",
+      "stay_dates": {
+        "check_in": "2024-12-20",
+        "check_out": "2024-12-24"
+      },
+      "resolution_status": "resolved",
+      "follow_up_required": false
+    },
+    {
+      "feedback_id": "FB2002",
+      "guest_id": "G2002",
+      "customer_id": "customer_002",
+      "rating": 4,
+      "comment": "Great family vacation! The kids loved the pool and game room. The connecting rooms worked perfectly for our family of five. Staff was very accommodating with our late checkout request. Only minor issue was that the kids' menu could have more healthy options, but overall we had a wonderful time and the kids are already asking when we can come back!",
+      "category": "family_amenities",
+      "feedback_type": "review",
+      "source": "website",
+      "sentiment": {
+        "score": 0.82,
+        "label": "POSITIVE",
+        "confidence": 0.91,
+        "keywords": [
+          "great",
+          "loved",
+          "wonderful",
+          "perfect",
+          "accommodating"
+        ]
+      },
+      "timestamp": "2024-12-25T10:15:00Z",
+      "processed": true,
+      "response_required": false,
+      "staff_response": "\u00a1Gracias Marcus! We're thrilled your family had such a wonderful time. We've noted your feedback about the kids' menu and will be adding more healthy options soon. We can't wait to welcome your family back!",
+      "response_date": "2024-12-25T14:20:00Z",
+      "hotel_department": "family_services",
+      "room_number": "1101-1102",
+      "stay_dates": {
+        "check_in": "2024-12-18",
+        "check_out": "2024-12-25"
+      },
+      "resolution_status": "resolved",
+      "follow_up_required": false
+    },
+    {
+      "feedback_id": "FB2003",
+      "guest_id": "G2003",
+      "customer_id": "customer_003",
+      "rating": 5,
+      "comment": "Absolutely loved the zen suite and wellness amenities! The meditation room was a peaceful sanctuary, and having a yoga mat in the room was such a thoughtful touch. The plant-based menu options exceeded my expectations - the vegan curry was incredible. The staff understood my dietary needs perfectly. This hotel truly cares about guest wellness. Namaste! \ud83d\ude4f",
+      "category": "wellness",
+      "feedback_type": "review",
+      "source": "social_media",
+      "sentiment": {
+        "score": 0.96,
+        "label": "POSITIVE",
+        "confidence": 0.98,
+        "keywords": [
+          "absolutely loved",
+          "peaceful",
+          "thoughtful",
+          "incredible",
+          "exceeded expectations"
+        ]
+      },
+      "timestamp": "2024-12-13T09:30:00Z",
+      "processed": true,
+      "response_required": false,
+      "staff_response": "Namaste Priya! Your review fills our hearts with joy. We're so glad you found peace in our zen suite and enjoyed our plant-based offerings. Thank you for recognizing our commitment to wellness. Until next time! \ud83e\uddd8\u200d\u2640\ufe0f",
+      "response_date": "2024-12-13T12:45:00Z",
+      "hotel_department": "wellness_center",
+      "room_number": "1501",
+      "stay_dates": {
+        "check_in": "2024-12-10",
+        "check_out": "2024-12-13"
+      },
+      "resolution_status": "resolved",
+      "follow_up_required": false
+    },
+    {
+      "feedback_id": "FB2004",
+      "guest_id": "G2004",
+      "customer_id": "customer_004",
+      "rating": 5,
+      "comment": "Impeccable service befitting a gentleman's club of the highest calibre. The butler service was extraordinarily professional, the champagne selection was superb, and the private dining experience was nothing short of magnificent. The presidential suite exceeded even my considerable expectations. Bravo to the entire team - this is hospitality at its finest.",
+      "category": "luxury_services",
+      "feedback_type": "review",
+      "source": "email",
+      "sentiment": {
+        "score": 0.98,
+        "label": "POSITIVE",
+        "confidence": 0.99,
+        "keywords": [
+          "impeccable",
+          "extraordinarily professional",
+          "superb",
+          "magnificent",
+          "exceeded expectations"
+        ]
+      },
+      "timestamp": "2025-01-05T18:45:00Z",
+      "processed": true,
+      "response_required": false,
+      "staff_response": "Dear Mr. Wellington, Your gracious words honor us tremendously. It has been our absolute pleasure to serve you during your extended stay. We eagerly await your next visit to continue providing you with the exceptional service you so richly deserve.",
+      "response_date": "2025-01-05T20:15:00Z",
+      "hotel_department": "vip_services",
+      "room_number": "PH01",
+      "stay_dates": {
+        "check_in": "2024-12-22",
+        "check_out": "2025-01-05"
+      },
+      "resolution_status": "resolved",
+      "follow_up_required": false
+    },
+    {
+      "feedback_id": "FB2005",
+      "guest_id": "G2005",
+      "customer_id": "customer_005",
+      "rating": 5,
+      "comment": "Perfect for health-conscious travelers! The fitness suite with in-room equipment was genius. The 24-hour gym had everything I needed for my workouts, and the healthy meal options were both nutritious and delicious. The staff understood my dietary requirements completely. This is how business travel should be - productive and healthy!",
+      "category": "fitness_wellness",
+      "feedback_type": "review",
+      "source": "mobile_app",
+      "sentiment": {
+        "score": 0.91,
+        "label": "POSITIVE",
+        "confidence": 0.95,
+        "keywords": [
+          "perfect",
+          "genius",
+          "delicious",
+          "completely understood",
+          "productive"
+        ]
+      },
+      "timestamp": "2024-12-12T13:45:00Z",
+      "processed": true,
+      "response_required": false,
+      "staff_response": "Thank you Sarah! We're delighted that our fitness amenities and healthy dining options supported your wellness goals. Your feedback motivates us to continue innovating for health-conscious travelers like yourself!",
+      "response_date": "2024-12-12T16:20:00Z",
+      "hotel_department": "fitness_center",
+      "room_number": "1801",
+      "stay_dates": {
+        "check_in": "2024-12-08",
+        "check_out": "2024-12-12"
+      },
+      "resolution_status": "resolved",
+      "follow_up_required": false
+    },
+    {
+      "feedback_id": "FB2006",
+      "guest_id": "G2006",
+      "customer_id": "customer_006",
+      "rating": 5,
+      "comment": "\u0645\u0645\u062a\u0627\u0632 \u062c\u062f\u0627\u064b! Excellent cultural sensitivity and service. The halal dining options were authentic and delicious, the prayer room was perfectly oriented and peaceful, and the Arabic-speaking concierge made communication effortless. This hotel truly understands international business travelers' needs. Shukran for the exceptional hospitality!",
+      "category": "cultural_services",
+      "feedback_type": "review",
+      "source": "whatsapp",
+      "sentiment": {
+        "score": 0.93,
+        "label": "POSITIVE",
+        "confidence": 0.96,
+        "keywords": [
+          "excellent",
+          "authentic",
+          "delicious",
+          "peaceful",
+          "exceptional",
+          "effortless"
+        ]
+      },
+      "timestamp": "2024-12-21T14:20:00Z",
+      "processed": true,
+      "response_required": false,
+      "staff_response": "\u0634\u0643\u0631\u0627\u064b \u062c\u0632\u064a\u0644\u0627\u064b Mr. Al-Rashid! We're honored that our cultural services met your expectations. Providing authentic and respectful hospitality for all our international guests is our privilege. \u0623\u0647\u0644\u0627\u064b \u0648\u0633\u0647\u0644\u0627\u064b always!",
+      "response_date": "2024-12-21T16:45:00Z",
+      "hotel_department": "international_services",
+      "room_number": "2401",
+      "stay_dates": {
+        "check_in": "2024-12-15",
+        "check_out": "2024-12-21"
+      },
+      "resolution_status": "resolved",
+      "follow_up_required": false
+    },
+    {
+      "feedback_id": "FB2007",
+      "guest_id": "G2007",
+      "customer_id": "customer_007",
+      "rating": 4,
+      "comment": "Bellissimo experience during Fashion Week! The fashion suite was stylishly appointed and the personal shopper service was incredibly helpful. Loved the proximity to the fashion district. The Italian restaurant was autentico - felt like being back in Nonna's kitchen! Only suggestion: the spa could use more Italian beauty treatments. Grazie mille!",
+      "category": "lifestyle_fashion",
+      "feedback_type": "review",
+      "source": "instagram",
+      "sentiment": {
+        "score": 0.85,
+        "label": "POSITIVE",
+        "confidence": 0.92,
+        "keywords": [
+          "bellissimo",
+          "stylishly",
+          "incredibly helpful",
+          "loved",
+          "autentico"
+        ]
+      },
+      "timestamp": "2024-12-13T11:30:00Z",
+      "processed": true,
+      "response_required": false,
+      "staff_response": "Grazie Isabella! We're thrilled you enjoyed your Fashion Week stay. Your suggestion about Italian beauty treatments is wonderful - we're already exploring partnerships with Italian spa brands. Arrivederci until next time! \ud83d\udc84\u2728",
+      "response_date": "2024-12-13T14:15:00Z",
+      "hotel_department": "lifestyle_services",
+      "room_number": "1505",
+      "stay_dates": {
+        "check_in": "2024-12-05",
+        "check_out": "2024-12-13"
+      },
+      "resolution_status": "resolved",
+      "follow_up_required": false
+    },
+    {
+      "feedback_id": "FB2008",
+      "guest_id": "G2001",
+      "customer_id": "customer_001",
+      "rating": 2,
+      "comment": "Disappointed with the noise levels during my recent stay. The construction work started at 6 AM right outside my executive suite, making it impossible to get proper rest before important meetings. While the staff was apologetic, the room change offered wasn't equivalent to what I booked. For a platinum member, I expected better handling of this situation.",
+      "category": "room_quality",
+      "feedback_type": "complaint",
+      "source": "email",
+      "sentiment": {
+        "score": 0.18,
+        "label": "NEGATIVE",
+        "confidence": 0.94,
+        "keywords": [
+          "disappointed",
+          "impossible",
+          "not equivalent",
+          "expected better"
+        ]
+      },
+      "timestamp": "2024-11-18T08:30:00Z",
+      "processed": true,
+      "response_required": true,
+      "staff_response": "Dear Ms. Chen, We sincerely apologize for this unacceptable experience. As our valued Platinum member, you deserve much better. We've issued a full refund and upgraded your next stay to our Presidential Suite at no charge. We've also implemented better construction scheduling policies.",
+      "response_date": "2024-11-18T10:15:00Z",
+      "hotel_department": "guest_relations",
+      "room_number": "2403",
+      "stay_dates": {
+        "check_in": "2024-11-15",
+        "check_out": "2024-11-18"
+      },
+      "resolution_status": "resolved",
+      "follow_up_required": true,
+      "compensation_provided": "full_refund_plus_upgrade"
+    },
+    {
+      "feedback_id": "FB2009",
+      "guest_id": "G2005",
+      "customer_id": "customer_005",
+      "rating": 3,
+      "comment": "Mixed experience this time. The fitness facilities were great as always, but the healthy meal options were limited compared to my previous stays. The room service took 45 minutes for a simple salad, and when it arrived, the ingredients weren't as fresh as expected. The staff was friendly but seemed understaffed during busy periods.",
+      "category": "food_service",
+      "feedback_type": "review",
+      "source": "mobile_app",
+      "sentiment": {
+        "score": 0.42,
+        "label": "NEUTRAL",
+        "confidence": 0.78,
+        "keywords": [
+          "mixed",
+          "limited",
+          "took too long",
+          "not fresh",
+          "understaffed"
+        ]
+      },
+      "timestamp": "2024-10-15T14:30:00Z",
+      "processed": true,
+      "response_required": true,
+      "staff_response": "Thank you for your honest feedback, Sarah. We've expanded our healthy menu options and hired additional kitchen staff to improve service times. We'd love to have you try our enhanced offerings on your next visit!",
+      "response_date": "2024-10-15T16:45:00Z",
+      "hotel_department": "food_beverage",
+      "room_number": "1205",
+      "stay_dates": {
+        "check_in": "2024-10-12",
+        "check_out": "2024-10-15"
+      },
+      "resolution_status": "resolved",
+      "follow_up_required": false
+    },
+    {
+      "feedback_id": "FB2010",
+      "guest_id": "G2002",
+      "customer_id": "customer_002",
+      "rating": 1,
+      "comment": "Extremely disappointed with our family stay. The pool was closed for maintenance without prior notice, which was the main reason we chose this hotel. The kids club had limited activities and the staff seemed unprepared for children. The family suite had a broken TV in the kids' room and the air conditioning was too loud. We ended up cutting our vacation short.",
+      "category": "family_amenities",
+      "feedback_type": "complaint",
+      "source": "phone",
+      "sentiment": {
+        "score": 0.08,
+        "label": "NEGATIVE",
+        "confidence": 0.97,
+        "keywords": [
+          "extremely disappointed",
+          "closed without notice",
+          "broken",
+          "unprepared",
+          "cutting short"
+        ]
+      },
+      "timestamp": "2024-07-20T16:45:00Z",
+      "processed": true,
+      "response_required": true,
+      "staff_response": "We are deeply sorry for ruining your family vacation, Marcus. This is unacceptable service. We've provided a full refund and invited your family back for a complimentary 7-night stay once our renovations are complete. We've also restructured our family services team.",
+      "response_date": "2024-07-20T18:30:00Z",
+      "hotel_department": "family_services",
+      "room_number": "1103-1104",
+      "stay_dates": {
+        "check_in": "2024-07-15",
+        "check_out": "2024-07-20"
+      },
+      "resolution_status": "resolved",
+      "follow_up_required": true,
+      "compensation_provided": "full_refund_plus_complimentary_stay"
+    },
+    {
+      "feedback_id": "FB2011",
+      "guest_id": "G2004",
+      "customer_id": "customer_004",
+      "rating": 4,
+      "comment": "Generally excellent service, though not quite to the usual sterling standards. The butler service was prompt and professional, however, the wine selection at dinner was somewhat limited compared to previous visits. The presidential suite was immaculate, but I did notice some minor wear on the antique furniture that requires attention. Still a pleasant stay overall.",
+      "category": "luxury_services",
+      "feedback_type": "review",
+      "source": "phone",
+      "sentiment": {
+        "score": 0.72,
+        "label": "POSITIVE",
+        "confidence": 0.88,
+        "keywords": [
+          "excellent",
+          "prompt",
+          "professional",
+          "immaculate",
+          "pleasant",
+          "limited",
+          "minor wear"
+        ]
+      },
+      "timestamp": "2024-09-12T19:20:00Z",
+      "processed": true,
+      "response_required": false,
+      "staff_response": "Dear Mr. Wellington, Thank you for your discerning feedback. We've expanded our wine cellar collection and scheduled immediate restoration for the antique furnishings. Your attention to detail helps us maintain the highest standards.",
+      "response_date": "2024-09-12T21:00:00Z",
+      "hotel_department": "vip_services",
+      "room_number": "2601",
+      "stay_dates": {
+        "check_in": "2024-09-05",
+        "check_out": "2024-09-12"
+      },
+      "resolution_status": "resolved",
+      "follow_up_required": false
+    },
+    {
+      "feedback_id": "FB2012",
+      "guest_id": "G2003",
+      "customer_id": "customer_003",
+      "rating": 5,
+      "comment": "Incredible wellness experience! The meditation sessions were transformative, and the organic menu exceeded all expectations. Every staff member seemed genuinely passionate about holistic wellness. The sunrise yoga on the rooftop was magical - such a unique offering! The zen suite created the perfect atmosphere for both productivity and relaxation. Truly grateful for this sanctuary! \ud83c\udf05\ud83e\uddd8\u200d\u2640\ufe0f",
+      "category": "wellness",
+      "feedback_type": "review",
+      "source": "social_media",
+      "sentiment": {
+        "score": 0.97,
+        "label": "POSITIVE",
+        "confidence": 0.99,
+        "keywords": [
+          "incredible",
+          "transformative",
+          "exceeded expectations",
+          "magical",
+          "perfect",
+          "grateful",
+          "sanctuary"
+        ]
+      },
+      "timestamp": "2024-09-23T07:15:00Z",
+      "processed": true,
+      "response_required": false,
+      "staff_response": "Priya, your beautiful words touch our souls! We're overjoyed that our wellness offerings resonated so deeply with you. Your energy and positivity inspire our entire team. Until we meet again in mindfulness! \ud83d\ude4f\u2728",
+      "response_date": "2024-09-23T09:30:00Z",
+      "hotel_department": "wellness_center",
+      "room_number": "705",
+      "stay_dates": {
+        "check_in": "2024-09-20",
+        "check_out": "2024-09-23"
+      },
+      "resolution_status": "resolved",
+      "follow_up_required": false
+    },
+    {
+      "guest_id": "G1001",
+      "feedback_type": "review",
+      "source": "website",
+      "content": "Great stay! The room was clean and the service was excellent.",
+      "rating": 5,
+      "category": "general",
+      "customer_id": "customer_001",
+      "submitted_by": "john.doe",
+      "sentiment_score": 0.9998573064804077,
+      "sentiment_label": "POSITIVE",
+      "confidence_score": 0.9998573064804077,
+      "keywords": [
+        "clean",
+        "room",
+        "service",
+        "excellent"
+      ],
+      "action_required": false,
+      "processed_at": "2025-07-02T12:29:48.381096",
+      "feedback_id": "F013",
+      "created_at": "2025-07-02T12:29:48.381096"
+    }
+  ]
+}

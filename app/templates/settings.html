@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - AI Guest Experience</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', path='/css/main.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-hotel"></i> LuxeAI
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/admin">Dashboard</a>
+                <a class="nav-link" href="/admin/analytics">Analytics</a>
+                <a class="nav-link" href="/admin/alerts">Alerts</a>
+                <a class="nav-link active" href="/admin/settings">Settings</a>
+                <a class="nav-link" href="/logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="mb-4">
+                    <i class="fas fa-cog text-secondary"></i>
+                    System Settings & Configuration
+                </h1>
+            </div>
+        </div>
+
+        <!-- AI Configuration -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-brain"></i>
+                            AI & Machine Learning Settings
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Sentiment Analysis Model</label>
+                                    <select class="form-select">
+                                        <option selected>DistilBERT (Current)</option>
+                                        <option>BERT-Large</option>
+                                        <option>RoBERTa</option>
+                                        <option>Custom Model</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Confidence Threshold</label>
+                                    <input type="range" class="form-range" min="0.5" max="1.0" step="0.05" value="0.8" id="confidenceThreshold">
+                                    <small class="text-muted">Current: <span id="confidenceValue">0.8</span></small>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="autoRetraining" checked>
+                                        <label class="form-check-label" for="autoRetraining">
+                                            Enable Auto-Retraining
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Recommendation Engine</label>
+                                    <select class="form-select">
+                                        <option selected>Collaborative Filtering</option>
+                                        <option>Content-Based</option>
+                                        <option>Hybrid Approach</option>
+                                        <option>Deep Learning</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Max Recommendations per Guest</label>
+                                    <input type="number" class="form-control" value="5" min="1" max="20">
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="realTimeProcessing" checked>
+                                        <label class="form-check-label" for="realTimeProcessing">
+                                            Real-time Processing
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notification Settings -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-bell"></i>
+                            Notification & Alert Settings
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Slack Webhook URL</label>
+                                    <input type="url" class="form-control" placeholder="https://hooks.slack.com/services/...">
+                                    <small class="text-muted">For critical alert notifications</small>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email Notifications</label>
+                                    <input type="email" class="form-control" placeholder="admin@hotel.com">
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="emailAlerts" checked>
+                                        <label class="form-check-label" for="emailAlerts">
+                                            Enable Email Alerts
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Alert Threshold for Negative Sentiment</label>
+                                    <select class="form-select">
+                                        <option>Very Negative (< 0.2)</option>
+                                        <option selected>Negative (< 0.4)</option>
+                                        <option>Somewhat Negative (< 0.6)</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Alert Frequency</label>
+                                    <select class="form-select">
+                                        <option>Immediate</option>
+                                        <option selected>Every 5 minutes</option>
+                                        <option>Every 15 minutes</option>
+                                        <option>Hourly</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="slackAlerts" checked>
+                                        <label class="form-check-label" for="slackAlerts">
+                                            Enable Slack Alerts
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Configuration -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-server"></i>
+                            System Configuration
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Data Retention Period</label>
+                                    <select class="form-select">
+                                        <option>30 days</option>
+                                        <option>90 days</option>
+                                        <option selected>1 year</option>
+                                        <option>2 years</option>
+                                        <option>Indefinite</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Session Timeout (minutes)</label>
+                                    <input type="number" class="form-control" value="60" min="15" max="480">
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="auditLogging" checked>
+                                        <label class="form-check-label" for="auditLogging">
+                                            Enable Audit Logging
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">API Rate Limit (requests/minute)</label>
+                                    <input type="number" class="form-control" value="1000" min="100" max="10000">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Backup Frequency</label>
+                                    <select class="form-select">
+                                        <option>Daily</option>
+                                        <option selected>Weekly</option>
+                                        <option>Monthly</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="maintenance" >
+                                        <label class="form-check-label" for="maintenance">
+                                            Maintenance Mode
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Management -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-users"></i>
+                            User Management
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Username</th>
+                                        <th>Role</th>
+                                        <th>Last Login</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>admin</td>
+                                        <td><span class="badge bg-danger">Admin</span></td>
+                                        <td>Today, 2:30 PM</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                            <button class="btn btn-sm btn-outline-danger">Disable</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>guest_001</td>
+                                        <td><span class="badge bg-info">Customer</span></td>
+                                        <td>Yesterday, 6:45 PM</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                            <button class="btn btn-sm btn-outline-danger">Disable</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>guest_002</td>
+                                        <td><span class="badge bg-info">Customer</span></td>
+                                        <td>Last week</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                            <button class="btn btn-sm btn-outline-danger">Disable</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <button class="btn btn-primary mt-3">
+                            <i class="fas fa-plus"></i> Add New User
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Save Settings -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <button class="btn btn-success btn-lg me-3" onclick="saveSettings()">
+                            <i class="fas fa-save"></i> Save All Settings
+                        </button>
+                        <button class="btn btn-secondary btn-lg me-3" onclick="resetSettings()">
+                            <i class="fas fa-undo"></i> Reset to Defaults
+                        </button>
+                        <button class="btn btn-info btn-lg" onclick="exportSettings()">
+                            <i class="fas fa-download"></i> Export Configuration
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Update confidence threshold display
+        document.getElementById('confidenceThreshold').addEventListener('input', function() {
+            document.getElementById('confidenceValue').textContent = this.value;
+        });
+
+        function saveSettings() {
+            // Simulate saving settings
+            const btn = event.target;
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Saved!';
+                btn.className = 'btn btn-success btn-lg me-3';
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    btn.className = 'btn btn-success btn-lg me-3';
+                }, 2000);
+            }, 1500);
+        }
+
+        function resetSettings() {
+            if (confirm('Are you sure you want to reset all settings to defaults? This action cannot be undone.')) {
+                alert('Settings reset to defaults');
+                location.reload();
+            }
+        }
+
+        function exportSettings() {
+            const settings = {
+                ai: {
+                    model: 'DistilBERT',
+                    confidence: 0.8,
+                    autoRetraining: true
+                },
+                notifications: {
+                    email: true,
+                    slack: true,
+                    threshold: 0.4
+                },
+                system: {
+                    retention: '1 year',
+                    sessionTimeout: 60,
+                    auditLogging: true
+                }
+            };
+            
+            const blob = new Blob([JSON.stringify(settings, null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'luxeai-settings.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

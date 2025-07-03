@@ -1,0 +1,886 @@
+[
+  {
+    "feedback_id": "FB_20250702_143433",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 5,
+    "subject": "Outstanding service from the team",
+    "comment": "The staff was incredibly helpful and friendly. They went above and beyond to make our stay memorable. Thank you!",
+    "category": "staff_service",
+    "location": "Front Desk",
+    "staff_member": "Sarah Johnson",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The staff was incredibly helpful and friendly. They went above and beyond to make our stay memorable. Thank you!",
+      "sentiment": "positive",
+      "confidence": 0.9998812675476074,
+      "scores": {
+        "negative": 0.00011872252071043476,
+        "positive": 0.9998812675476074
+      },
+      "timestamp": "2025-07-02T14:34:33.938701",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T14:34:33.938701",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_143433",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 2,
+    "subject": "Room cleanliness issues",
+    "comment": "The room was not properly cleaned when we arrived. The bathroom had stains and the bed sheets looked used.",
+    "category": "cleanliness",
+    "location": "Room 305",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The room was not properly cleaned when we arrived. The bathroom had stains and the bed sheets looked used.",
+      "sentiment": "negative",
+      "confidence": 0.9997287392616272,
+      "scores": {
+        "negative": 0.9997287392616272,
+        "positive": 0.0002712609129957855
+      },
+      "timestamp": "2025-07-02T14:34:33.970159",
+      "is_negative": true
+    },
+    "submitted_at": "2025-07-02T14:34:33.970159",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_143603",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 3,
+    "subject": "good service",
+    "comment": "good service",
+    "category": "room_service",
+    "location": "",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "good service",
+      "sentiment": "positive",
+      "confidence": 0.9998499155044556,
+      "scores": {
+        "negative": 0.00015008851187303662,
+        "positive": 0.9998499155044556
+      },
+      "timestamp": "2025-07-02T14:36:03.707657",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T14:36:03.707657",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_143938",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 4,
+    "subject": "good service",
+    "comment": "good service",
+    "category": "dining",
+    "location": "",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "good service",
+      "sentiment": "positive",
+      "confidence": 0.9998499155044556,
+      "scores": {
+        "negative": 0.00015008851187303662,
+        "positive": 0.9998499155044556
+      },
+      "timestamp": "2025-07-02T14:39:38.396948",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T14:39:38.396948",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_143951",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 4,
+    "subject": "Helpful front desk staff",
+    "comment": "The front desk staff was very helpful during check-in. They provided great recommendations for local restaurants.",
+    "category": "staff_service",
+    "location": "Front Desk",
+    "staff_member": "Jennifer",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The front desk staff was very helpful during check-in. They provided great recommendations for local restaurants.",
+      "sentiment": "positive",
+      "confidence": 0.9988023042678833,
+      "scores": {
+        "negative": 0.0011977114481851459,
+        "positive": 0.9988023042678833
+      },
+      "timestamp": "2025-07-02T14:39:51.671566",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T14:39:51.671566",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_143951",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 2,
+    "subject": "Cold food at restaurant",
+    "comment": "The food at the hotel restaurant was cold when it arrived. Very disappointing experience.",
+    "category": "dining",
+    "location": "Hotel Restaurant",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The food at the hotel restaurant was cold when it arrived. Very disappointing experience.",
+      "sentiment": "negative",
+      "confidence": 0.9997900128364563,
+      "scores": {
+        "negative": 0.9997900128364563,
+        "positive": 0.00020994812075514346
+      },
+      "timestamp": "2025-07-02T14:39:51.701193",
+      "is_negative": true
+    },
+    "submitted_at": "2025-07-02T14:39:51.701193",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_143951",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 5,
+    "subject": "Amazing pool area",
+    "comment": "The pool area is beautiful and well-maintained. Great place to relax!",
+    "category": "amenities",
+    "location": "Pool Area",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The pool area is beautiful and well-maintained. Great place to relax!",
+      "sentiment": "positive",
+      "confidence": 0.9998807907104492,
+      "scores": {
+        "negative": 0.00011922590783797204,
+        "positive": 0.9998807907104492
+      },
+      "timestamp": "2025-07-02T14:39:51.738939",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T14:39:51.738939",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_144131",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 4,
+    "subject": "good service",
+    "comment": "good service",
+    "category": "room_service",
+    "location": "",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "good service",
+      "sentiment": "positive",
+      "confidence": 0.9998499155044556,
+      "scores": {
+        "negative": 0.00015008851187303662,
+        "positive": 0.9998499155044556
+      },
+      "timestamp": "2025-07-02T14:41:31.909022",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T14:41:31.909022",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_144208",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 4,
+    "subject": "good service",
+    "comment": "good service",
+    "category": "dining",
+    "location": "",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "good service",
+      "sentiment": "positive",
+      "confidence": 0.9998499155044556,
+      "scores": {
+        "negative": 0.00015008851187303662,
+        "positive": 0.9998499155044556
+      },
+      "timestamp": "2025-07-02T14:42:08.267626",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T14:42:08.267626",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_144315",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 4,
+    "subject": "Test feedback",
+    "comment": "This is a test comment to debug the submission issue.",
+    "category": "staff_service",
+    "location": null,
+    "staff_member": null,
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "This is a test comment to debug the submission issue.",
+      "sentiment": "negative",
+      "confidence": 0.9968184232711792,
+      "scores": {
+        "negative": 0.9968184232711792,
+        "positive": 0.0031815324909985065
+      },
+      "timestamp": "2025-07-02T14:43:15.518319",
+      "is_negative": true
+    },
+    "submitted_at": "2025-07-02T14:43:15.518319",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_144315",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 3,
+    "subject": "Restaurant experience",
+    "comment": "The food was okay but service was slow.",
+    "category": "dining",
+    "location": "Hotel Restaurant",
+    "staff_member": "John",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The food was okay but service was slow.",
+      "sentiment": "negative",
+      "confidence": 0.994941771030426,
+      "scores": {
+        "negative": 0.994941771030426,
+        "positive": 0.005058188457041979
+      },
+      "timestamp": "2025-07-02T14:43:15.544893",
+      "is_negative": true
+    },
+    "submitted_at": "2025-07-02T14:43:15.544893",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_144330",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 5,
+    "subject": "Great pool area",
+    "comment": "The pool is amazing!",
+    "category": "amenities",
+    "location": "",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The pool is amazing!",
+      "sentiment": "positive",
+      "confidence": 0.9998830556869507,
+      "scores": {
+        "negative": 0.00011694722343236208,
+        "positive": 0.9998830556869507
+      },
+      "timestamp": "2025-07-02T14:43:30.080867",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T14:43:30.080867",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_144438",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 4,
+    "subject": "good service",
+    "comment": "Error submitting feedback. Please try again.",
+    "category": "amenities",
+    "location": "",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "Error submitting feedback. Please try again.",
+      "sentiment": "negative",
+      "confidence": 0.9964746832847595,
+      "scores": {
+        "negative": 0.9964746832847595,
+        "positive": 0.003525325795635581
+      },
+      "timestamp": "2025-07-02T14:44:38.510876",
+      "is_negative": true
+    },
+    "submitted_at": "2025-07-02T14:44:38.510876",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_144536",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 4,
+    "subject": "good service",
+    "comment": "good service",
+    "category": "dining",
+    "location": "",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "good service",
+      "sentiment": "positive",
+      "confidence": 0.9998499155044556,
+      "scores": {
+        "negative": 0.00015008851187303662,
+        "positive": 0.9998499155044556
+      },
+      "timestamp": "2025-07-02T14:45:36.685808",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T14:45:36.685808",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_144536",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 4,
+    "subject": "good service",
+    "comment": "good service",
+    "category": "dining",
+    "location": "",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "good service",
+      "sentiment": "positive",
+      "confidence": 0.9998499155044556,
+      "scores": {
+        "negative": 0.00015008851187303662,
+        "positive": 0.9998499155044556
+      },
+      "timestamp": "2025-07-02T14:45:36.702996",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T14:45:36.702996",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_144854",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 4,
+    "subject": "good food ",
+    "comment": "very healthy food and it is also delicious",
+    "category": "dining",
+    "location": "",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "very healthy food and it is also delicious",
+      "sentiment": "positive",
+      "confidence": 0.9998856782913208,
+      "scores": {
+        "negative": 0.00011435115447966382,
+        "positive": 0.9998856782913208
+      },
+      "timestamp": "2025-07-02T14:48:54.539016",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T14:48:54.539016",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_145151",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 1,
+    "subject": "food is bad",
+    "comment": "Food is bad and undercooked\n",
+    "category": "dining",
+    "location": "",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "Food is bad and undercooked\n",
+      "sentiment": "negative",
+      "confidence": 0.9995864033699036,
+      "scores": {
+        "negative": 0.9995864033699036,
+        "positive": 0.0004136008501518518
+      },
+      "timestamp": "2025-07-02T14:51:51.076308",
+      "is_negative": true
+    },
+    "submitted_at": "2025-07-02T14:51:51.077309",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_145223",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 5,
+    "subject": "Excellent service",
+    "comment": "The staff was amazing and very helpful throughout our stay!",
+    "category": "staff_service",
+    "location": "Front Desk",
+    "staff_member": "Sarah",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The staff was amazing and very helpful throughout our stay!",
+      "sentiment": "positive",
+      "confidence": 0.9998824596405029,
+      "scores": {
+        "negative": 0.00011757698666770011,
+        "positive": 0.9998824596405029
+      },
+      "timestamp": "2025-07-02T14:52:23.723225",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T14:52:23.724226",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_145223",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 2,
+    "subject": "Room was dirty",
+    "comment": "The room was not clean when we arrived. Very disappointed.",
+    "category": "cleanliness",
+    "location": "Room 205",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The room was not clean when we arrived. Very disappointed.",
+      "sentiment": "negative",
+      "confidence": 0.9998015761375427,
+      "scores": {
+        "negative": 0.9998015761375427,
+        "positive": 0.0001984765549423173
+      },
+      "timestamp": "2025-07-02T14:52:23.755132",
+      "is_negative": true
+    },
+    "submitted_at": "2025-07-02T14:52:23.755132",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_145223",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 3,
+    "subject": "Average pool area",
+    "comment": "The pool was okay, nothing special but adequate for our needs.",
+    "category": "amenities",
+    "location": "Pool Area",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The pool was okay, nothing special but adequate for our needs.",
+      "sentiment": "positive",
+      "confidence": 0.9879065752029419,
+      "scores": {
+        "negative": 0.012093393132090569,
+        "positive": 0.9879065752029419
+      },
+      "timestamp": "2025-07-02T14:52:23.806401",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T14:52:23.806401",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_145349",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 5,
+    "subject": "Amazing staff",
+    "comment": "The staff was absolutely wonderful! Best hotel experience ever!",
+    "category": "staff_service",
+    "location": "Front Desk",
+    "staff_member": "John",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The staff was absolutely wonderful! Best hotel experience ever!",
+      "sentiment": "positive",
+      "confidence": 0.9998733997344971,
+      "scores": {
+        "negative": 0.00012662552762776613,
+        "positive": 0.9998733997344971
+      },
+      "timestamp": "2025-07-02T14:53:49.437921",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T14:53:49.437921",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_145349",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 4,
+    "subject": "Nice pool",
+    "comment": "The pool was really nice and clean. Enjoyed swimming.",
+    "category": "amenities",
+    "location": "Pool Area",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The pool was really nice and clean. Enjoyed swimming.",
+      "sentiment": "positive",
+      "confidence": 0.9998786449432373,
+      "scores": {
+        "negative": 0.00012130683899158612,
+        "positive": 0.9998786449432373
+      },
+      "timestamp": "2025-07-02T14:53:49.962372",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T14:53:49.962372",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_145350",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 3,
+    "subject": "Okay restaurant",
+    "comment": "The food was okay, nothing special but acceptable.",
+    "category": "dining",
+    "location": "Restaurant",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The food was okay, nothing special but acceptable.",
+      "sentiment": "positive",
+      "confidence": 0.9987019300460815,
+      "scores": {
+        "negative": 0.001297998707741499,
+        "positive": 0.9987019300460815
+      },
+      "timestamp": "2025-07-02T14:53:50.487999",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T14:53:50.487999",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_145351",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 2,
+    "subject": "Room issues",
+    "comment": "The room had some cleanliness issues that need attention.",
+    "category": "cleanliness",
+    "location": "Room 301",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The room had some cleanliness issues that need attention.",
+      "sentiment": "negative",
+      "confidence": 0.9941950440406799,
+      "scores": {
+        "negative": 0.9941950440406799,
+        "positive": 0.005804975051432848
+      },
+      "timestamp": "2025-07-02T14:53:51.009415",
+      "is_negative": true
+    },
+    "submitted_at": "2025-07-02T14:53:51.009415",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_145351",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 1,
+    "subject": "Horrible service",
+    "comment": "The worst hotel experience I've ever had. Very disappointed.",
+    "category": "staff_service",
+    "location": "Front Desk",
+    "staff_member": "Manager",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The worst hotel experience I've ever had. Very disappointed.",
+      "sentiment": "negative",
+      "confidence": 0.9998149275779724,
+      "scores": {
+        "negative": 0.9998149275779724,
+        "positive": 0.00018513499526306987
+      },
+      "timestamp": "2025-07-02T14:53:51.539148",
+      "is_negative": true
+    },
+    "submitted_at": "2025-07-02T14:53:51.539148",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_145537",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 1,
+    "subject": "food is bad",
+    "comment": "food is bad and unhealthy",
+    "category": "dining",
+    "location": "",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "food is bad and unhealthy",
+      "sentiment": "negative",
+      "confidence": 0.9996007084846497,
+      "scores": {
+        "negative": 0.9996007084846497,
+        "positive": 0.0003992994606960565
+      },
+      "timestamp": "2025-07-02T14:55:37.574725",
+      "is_negative": true
+    },
+    "submitted_at": "2025-07-02T14:55:37.574725",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_150830",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 5,
+    "subject": "Excellent service",
+    "comment": "The staff was amazing and very helpful throughout our stay!",
+    "category": "staff_service",
+    "location": "Front Desk",
+    "staff_member": "Sarah",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The staff was amazing and very helpful throughout our stay!",
+      "sentiment": "positive",
+      "confidence": 0.9998824596405029,
+      "scores": {
+        "negative": 0.00011757698666770011,
+        "positive": 0.9998824596405029
+      },
+      "timestamp": "2025-07-02T15:08:30.537212",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T15:08:30.537212",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_150830",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 2,
+    "subject": "Room was dirty",
+    "comment": "The room was not clean when we arrived. Very disappointed.",
+    "category": "cleanliness",
+    "location": "Room 205",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The room was not clean when we arrived. Very disappointed.",
+      "sentiment": "negative",
+      "confidence": 0.9998015761375427,
+      "scores": {
+        "negative": 0.9998015761375427,
+        "positive": 0.0001984765549423173
+      },
+      "timestamp": "2025-07-02T15:08:30.564379",
+      "is_negative": true
+    },
+    "submitted_at": "2025-07-02T15:08:30.564379",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_150830",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 3,
+    "subject": "Average pool area",
+    "comment": "The pool was okay, nothing special but adequate for our needs.",
+    "category": "amenities",
+    "location": "Pool Area",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The pool was okay, nothing special but adequate for our needs.",
+      "sentiment": "positive",
+      "confidence": 0.9879065752029419,
+      "scores": {
+        "negative": 0.012093393132090569,
+        "positive": 0.9879065752029419
+      },
+      "timestamp": "2025-07-02T15:08:30.605651",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T15:08:30.605651",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_151018",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 5,
+    "subject": "Excellent concierge service",
+    "comment": "The concierge was extremely helpful with restaurant recommendations and booking our tours.",
+    "category": "staff_service",
+    "location": "Lobby",
+    "staff_member": "Michael",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The concierge was extremely helpful with restaurant recommendations and booking our tours.",
+      "sentiment": "positive",
+      "confidence": 0.9932804703712463,
+      "scores": {
+        "negative": 0.006719531957060099,
+        "positive": 0.9932804703712463
+      },
+      "timestamp": "2025-07-02T15:10:18.913139",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-02T15:10:18.913139",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_151018",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 2,
+    "subject": "AC not working properly",
+    "comment": "The air conditioning in our room was making strange noises and barely cooling the room.",
+    "category": "room_comfort",
+    "location": "Room 512",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The air conditioning in our room was making strange noises and barely cooling the room.",
+      "sentiment": "negative",
+      "confidence": 0.9983036518096924,
+      "scores": {
+        "negative": 0.9983036518096924,
+        "positive": 0.0016963239759206772
+      },
+      "timestamp": "2025-07-02T15:10:18.947722",
+      "is_negative": true
+    },
+    "submitted_at": "2025-07-02T15:10:18.947722",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_151019",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 3,
+    "subject": "Breakfast was average",
+    "comment": "The breakfast buffet had decent variety but nothing spectacular. Food temperature was inconsistent.",
+    "category": "food_quality",
+    "location": "Restaurant",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "The breakfast buffet had decent variety but nothing spectacular. Food temperature was inconsistent.",
+      "sentiment": "negative",
+      "confidence": 0.9988916516304016,
+      "scores": {
+        "negative": 0.9988916516304016,
+        "positive": 0.0011083256686106324
+      },
+      "timestamp": "2025-07-02T15:10:19.030800",
+      "is_negative": true
+    },
+    "submitted_at": "2025-07-02T15:10:19.030800",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250702_151051",
+    "guest_id": "guest_001",
+    "guest_name": "Emily Johnson",
+    "guest_username": "guest_001",
+    "rating": 2,
+    "subject": "food is unhealthy",
+    "comment": "food is unhealthy",
+    "category": "dining",
+    "location": "",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "food is unhealthy",
+      "sentiment": "negative",
+      "confidence": 0.9977097511291504,
+      "scores": {
+        "negative": 0.9977097511291504,
+        "positive": 0.002290296135470271
+      },
+      "timestamp": "2025-07-02T15:10:51.687756",
+      "is_negative": true
+    },
+    "submitted_at": "2025-07-02T15:10:51.687756",
+    "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250703_113526",
+    "guest_id": "guest_004",
+    "guest_name": "SAM AK",
+    "guest_username": "sam",
+    "rating": 5,
+    "subject": "excellent staff service",
+    "comment": "excellent staff service and staffs were polite",
+    "category": "staff_service",
+    "location": "",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "excellent staff service and staffs were polite",
+      "sentiment": "positive",
+      "confidence": 0.9996602535247803,
+      "scores": {
+        "negative": 0.00033970718504860997,
+        "positive": 0.9996602535247803
+      },
+      "timestamp": "2025-07-03T11:35:26.880227",
+      "is_negative": false
+    },
+    "submitted_at": "2025-07-03T11:35:26.880227",
+    "status": "new"
+  }
+]

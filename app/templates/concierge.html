@@ -1,0 +1,462 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Concierge - AI-Driven Guest Experience{% endblock %}
+
+{% block content %}
+<div class="concierge-page">
+    <!-- Page Header -->
+    <div class="page-header mb-5">
+        <div class="card">
+            <div class="card-body" style="background: linear-gradient(135deg, var(--warning-color) 0%, #f39c12 100%); color: white; border-radius: var(--radius-lg);">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h1 class="mb-3">
+                            <i class="fas fa-concierge-bell"></i>
+                            Contact Concierge
+                        </h1>
+                        <p class="lead mb-0">
+                            24/7 personalized assistance at your service, {{ current_user.first_name }}
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="contact-stats">
+                            <div class="stat-item">
+                                <div class="stat-value">< 5min</div>
+                                <div class="stat-label">Average Response</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Contact Options -->
+    <div class="quick-contact mb-5">
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <div class="contact-icon mb-3">
+                            <i class="fas fa-phone text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <h4>Call Directly</h4>
+                        <p class="text-muted">Speak with our concierge team</p>
+                        <a href="tel:+1-800-LUXURY" class="btn btn-primary">
+                            <i class="fas fa-phone"></i>
+                            Call Now
+                        </a>
+                        <p class="mt-2 text-sm text-muted">+1 (800) LUXURY</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <div class="contact-icon mb-3">
+                            <i class="fas fa-comments text-success" style="font-size: 3rem;"></i>
+                        </div>
+                        <h4>Live Chat</h4>
+                        <p class="text-muted">Instant messaging support</p>
+                        <button class="btn btn-success" id="start-chat">
+                            <i class="fas fa-comment-dots"></i>
+                            Start Chat
+                        </button>
+                        <p class="mt-2 text-sm text-success">● Online Now</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <div class="contact-icon mb-3">
+                            <i class="fas fa-envelope text-info" style="font-size: 3rem;"></i>
+                        </div>
+                        <h4>Send Message</h4>
+                        <p class="text-muted">Non-urgent requests</p>
+                        <button class="btn btn-info" onclick="document.getElementById('message-form').scrollIntoView()">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                        <p class="mt-2 text-sm text-muted">Response in 1 hour</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <div class="contact-icon mb-3">
+                            <i class="fas fa-bell text-warning" style="font-size: 3rem;"></i>
+                        </div>
+                        <h4>Emergency</h4>
+                        <p class="text-muted">Urgent assistance needed</p>
+                        <button class="btn btn-warning" id="emergency-contact">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            Emergency
+                        </button>
+                        <p class="mt-2 text-sm text-muted">24/7 Available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popular Services -->
+    <div class="popular-services mb-5">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-star"></i>
+                    Popular Concierge Services
+                </h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="service-item p-3 border rounded">
+                            <h5><i class="fas fa-utensils text-primary me-2"></i>Restaurant Reservations</h5>
+                            <p class="text-muted mb-2">Book tables at the city's finest restaurants</p>
+                            <button class="btn btn-sm btn-outline-primary" onclick="requestService('restaurant')">Request</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="service-item p-3 border rounded">
+                            <h5><i class="fas fa-car text-success me-2"></i>Transportation</h5>
+                            <p class="text-muted mb-2">Airport transfers, city tours, car rentals</p>
+                            <button class="btn btn-sm btn-outline-success" onclick="requestService('transport')">Request</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="service-item p-3 border rounded">
+                            <h5><i class="fas fa-ticket-alt text-info me-2"></i>Event Tickets</h5>
+                            <p class="text-muted mb-2">Theater, concerts, sports events</p>
+                            <button class="btn btn-sm btn-outline-info" onclick="requestService('tickets')">Request</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="service-item p-3 border rounded">
+                            <h5><i class="fas fa-spa text-purple me-2"></i>Spa & Wellness</h5>
+                            <p class="text-muted mb-2">Massage appointments, wellness packages</p>
+                            <button class="btn btn-sm btn-outline-secondary" onclick="requestService('spa')">Request</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="service-item p-3 border rounded">
+                            <h5><i class="fas fa-shopping-bag text-warning me-2"></i>Personal Shopping</h5>
+                            <p class="text-muted mb-2">Shopping assistance and delivery</p>
+                            <button class="btn btn-sm btn-outline-warning" onclick="requestService('shopping')">Request</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="service-item p-3 border rounded">
+                            <h5><i class="fas fa-baby text-pink me-2"></i>Childcare Services</h5>
+                            <p class="text-muted mb-2">Babysitting and children's activities</p>
+                            <button class="btn btn-sm btn-outline-danger" onclick="requestService('childcare')">Request</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Form -->
+    <div class="message-form mb-5" id="message-form">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Message to Concierge
+                </h3>
+            </div>
+            <div class="card-body">
+                <form id="concierge-message-form">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="service-type" class="form-label">Service Type</label>
+                            <select class="form-select" id="service-type" name="service_type" required>
+                                <option value="">Select service type...</option>
+                                <option value="restaurant">Restaurant Reservations</option>
+                                <option value="transport">Transportation</option>
+                                <option value="tickets">Event Tickets</option>
+                                <option value="spa">Spa & Wellness</option>
+                                <option value="shopping">Personal Shopping</option>
+                                <option value="childcare">Childcare Services</option>
+                                <option value="tour">Tours & Activities</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label for="priority" class="form-label">Priority Level</label>
+                            <select class="form-select" id="priority" name="priority" required>
+                                <option value="low">Low - Can wait</option>
+                                <option value="medium" selected>Medium - Soon as possible</option>
+                                <option value="high">High - Urgent</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Brief description of your request" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Detailed Request</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Please provide details about your request..." required></textarea>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="preferred-time" class="form-label">Preferred Time</label>
+                            <input type="datetime-local" class="form-control" id="preferred-time" name="preferred_time">
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label for="contact-method" class="form-label">Preferred Contact Method</label>
+                            <select class="form-select" id="contact-method" name="contact_method">
+                                <option value="room_phone">Room Phone</option>
+                                <option value="mobile">Mobile Phone</option>
+                                <option value="email">Email</option>
+                                <option value="in_person">In Person</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Request
+                        </button>
+                        <button type="reset" class="btn btn-outline-secondary">
+                            <i class="fas fa-undo"></i>
+                            Clear Form
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Previous Requests -->
+    <div class="previous-requests mb-5">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-history"></i>
+                    Your Recent Requests
+                </h3>
+            </div>
+            <div class="card-body">
+                <div id="requests-list">
+                    <div class="request-item mb-3 p-3 border rounded">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h5 class="mb-1">Restaurant Reservation</h5>
+                                <small class="text-muted">December 20, 2024 • 2:30 PM</small>
+                            </div>
+                            <span class="badge bg-success">Completed</span>
+                        </div>
+                        <p class="mb-2">Table for 2 at The Rooftop Bistro for tonight at 7 PM</p>
+                        <div class="request-response">
+                            <strong>Concierge Response:</strong> Reservation confirmed! Table 12 is reserved for you. Enjoy your dinner!
+                        </div>
+                    </div>
+
+                    <div class="request-item mb-3 p-3 border rounded">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h5 class="mb-1">Spa Appointment</h5>
+                                <small class="text-muted">December 19, 2024 • 10:15 AM</small>
+                            </div>
+                            <span class="badge bg-info">In Progress</span>
+                        </div>
+                        <p class="mb-2">Couples massage for tomorrow afternoon</p>
+                        <div class="request-response">
+                            <strong>Concierge Response:</strong> Checking availability and will confirm within 30 minutes.
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-outline-primary" id="load-more-requests">
+                    <i class="fas fa-plus"></i>
+                    Load More Requests
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Live Chat Modal -->
+<div class="modal fade" id="chatModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-comments text-success"></i>
+                    Live Chat with Concierge
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div id="chat-container" style="height: 400px; overflow-y: auto; border: 1px solid #dee2e6; padding: 15px; margin-bottom: 15px; background: #f8f9fa;">
+                    <div class="chat-message concierge-message mb-3">
+                        <div class="message-header">
+                            <strong>Concierge Sarah</strong>
+                            <small class="text-muted">Now</small>
+                        </div>
+                        <div class="message-content p-2 bg-light rounded">
+                            Hello {{ current_user.first_name }}! How can I assist you today?
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="chat-input" placeholder="Type your message...">
+                        <button class="btn btn-primary" id="send-chat">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Start chat functionality
+    document.getElementById('start-chat').addEventListener('click', function() {
+        const chatModal = new bootstrap.Modal(document.getElementById('chatModal'));
+        chatModal.show();
+    });
+
+    // Emergency contact
+    document.getElementById('emergency-contact').addEventListener('click', function() {
+        if (confirm('This will connect you directly to emergency assistance. Continue?')) {
+            // In a real implementation, this would trigger emergency protocols
+            showAlert('Emergency services contacted. Someone will be with you immediately.', 'warning');
+        }
+    });
+
+    // Service request buttons
+    window.requestService = function(serviceType) {
+        const serviceTypeSelect = document.getElementById('service-type');
+        serviceTypeSelect.value = serviceType;
+        document.getElementById('message-form').scrollIntoView();
+        showAlert(`${serviceType.charAt(0).toUpperCase() + serviceType.slice(1)} service selected. Please fill out the form below.`, 'info');
+    };
+
+    // Message form submission
+    document.getElementById('concierge-message-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const messageData = {
+            service_type: formData.get('service_type'),
+            priority: formData.get('priority'),
+            subject: formData.get('subject'),
+            message: formData.get('message'),
+            preferred_time: formData.get('preferred_time'),
+            contact_method: formData.get('contact_method')
+        };
+
+        try {
+            const response = await fetch('/api/concierge/request', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(messageData)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                showAlert('Your request has been sent to our concierge team. We will respond shortly!', 'success');
+                this.reset();
+                loadRecentRequests();
+            } else {
+                showAlert('Failed to send request: ' + result.detail, 'error');
+            }
+        } catch (error) {
+            showAlert('Error sending request: ' + error.message, 'error');
+        }
+    });
+
+    // Chat functionality
+    document.getElementById('send-chat').addEventListener('click', function() {
+        sendChatMessage();
+    });
+
+    document.getElementById('chat-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            sendChatMessage();
+        }
+    });
+
+    function sendChatMessage() {
+        const input = document.getElementById('chat-input');
+        const message = input.value.trim();
+        
+        if (message) {
+            const chatContainer = document.getElementById('chat-container');
+            const messageHTML = `
+                <div class="chat-message guest-message mb-3 text-end">
+                    <div class="message-header">
+                        <small class="text-muted">Now</small>
+                        <strong>You</strong>
+                    </div>
+                    <div class="message-content p-2 bg-primary text-white rounded d-inline-block">
+                        ${message}
+                    </div>
+                </div>
+            `;
+            chatContainer.innerHTML += messageHTML;
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+            input.value = '';
+
+            // Simulate concierge response
+            setTimeout(() => {
+                const responseHTML = `
+                    <div class="chat-message concierge-message mb-3">
+                        <div class="message-header">
+                            <strong>Concierge Sarah</strong>
+                            <small class="text-muted">Now</small>
+                        </div>
+                        <div class="message-content p-2 bg-light rounded">
+                            Thank you for your message. I'm checking on that for you right away!
+                        </div>
+                    </div>
+                `;
+                chatContainer.innerHTML += responseHTML;
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }, 1500);
+        }
+    }
+
+    // Load more requests
+    document.getElementById('load-more-requests').addEventListener('click', function() {
+        loadRecentRequests();
+    });
+
+    async function loadRecentRequests() {
+        try {
+            const response = await fetch('/api/concierge/my-requests');
+            const data = await response.json();
+            
+            if (response.ok) {
+                showAlert('Request history updated!', 'info');
+            } else {
+                showAlert('Failed to load request history', 'error');
+            }
+        } catch (error) {
+            showAlert('Error loading request history: ' + error.message, 'error');
+        }
+    }
+});
+</script>
+{% endblock %}

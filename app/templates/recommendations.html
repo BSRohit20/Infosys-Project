@@ -1,0 +1,298 @@
+{% extends "base.html" %}
+
+{% block title %}Recommendations - AI-Driven Guest Experience{% endblock %}
+
+{% block content %}
+<div class="recommendations-page">
+    <!-- Page Header -->
+    <div class="page-header mb-5">
+        <div class="card">
+            <div class="card-body" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%); color: white; border-radius: var(--radius-lg);">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h1 class="mb-3">
+                            <i class="fas fa-magic"></i>
+                            Personalized Recommendations
+                        </h1>
+                        <p class="lead mb-0">
+                            AI-powered suggestions tailored just for you, {{ current_user.first_name }}!
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <button class="btn btn-light btn-lg" id="refresh-recommendations">
+                            <i class="fas fa-sync-alt"></i>
+                            Refresh Suggestions
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recommendation Categories -->
+    <div class="recommendation-categories mb-5">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-utensils text-primary"></i>
+                            Dining Recommendations
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="dining-recommendations">
+                            <div class="recommendation-item mb-3">
+                                <h5>The Rooftop Bistro</h5>
+                                <p class="text-muted">Perfect for romantic dinners with city views</p>
+                                <div class="rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-2">4.8/5</span>
+                                </div>
+                            </div>
+                            <div class="recommendation-item mb-3">
+                                <h5>Ocean Breeze Café</h5>
+                                <p class="text-muted">Fresh seafood and ocean views</p>
+                                <div class="rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="far fa-star text-warning"></i>
+                                    <span class="ms-2">4.5/5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary w-100" id="load-dining">
+                            <i class="fas fa-plus"></i>
+                            Load More Dining Options
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-hiking text-success"></i>
+                            Activities & Tours
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="activity-recommendations">
+                            <div class="recommendation-item mb-3">
+                                <h5>City Historical Walking Tour</h5>
+                                <p class="text-muted">Discover the city's rich heritage</p>
+                                <div class="rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-2">4.9/5</span>
+                                </div>
+                            </div>
+                            <div class="recommendation-item mb-3">
+                                <h5>Spa & Wellness Package</h5>
+                                <p class="text-muted">Relax and rejuvenate with our premium spa</p>
+                                <div class="rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="far fa-star text-warning"></i>
+                                    <span class="ms-2">4.7/5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-success w-100" id="load-activities">
+                            <i class="fas fa-plus"></i>
+                            Load More Activities
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-gem text-purple"></i>
+                            Premium Services
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="service-recommendations">
+                            <div class="recommendation-item mb-3">
+                                <h5>Personal Shopping Assistant</h5>
+                                <p class="text-muted">Curated shopping experience with local experts</p>
+                                <div class="rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="ms-2">5.0/5</span>
+                                </div>
+                            </div>
+                            <div class="recommendation-item mb-3">
+                                <h5>Private Chef Experience</h5>
+                                <p class="text-muted">In-room dining with Michelin-starred cuisine</p>
+                                <div class="rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="far fa-star text-warning"></i>
+                                    <span class="ms-2">4.8/5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary w-100" id="load-services">
+                            <i class="fas fa-plus"></i>
+                            Load More Services
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Insights Section -->
+    <div class="ai-insights mb-5">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-brain text-info"></i>
+                    AI Insights & Analysis
+                </h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Your Preference Profile</h5>
+                        <div class="preference-tags mb-3">
+                            <span class="badge bg-primary me-2 mb-2">Fine Dining</span>
+                            <span class="badge bg-success me-2 mb-2">Cultural Activities</span>
+                            <span class="badge bg-warning me-2 mb-2">Wellness</span>
+                            <span class="badge bg-info me-2 mb-2">Premium Services</span>
+                        </div>
+                        <p class="text-muted">
+                            Based on your previous feedback and preferences, our AI has identified these key interests.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Recommendation Confidence</h5>
+                        <div class="confidence-meter mb-3">
+                            <div class="progress">
+                                <div class="progress-bar bg-success" style="width: 89%">89% Match</div>
+                            </div>
+                        </div>
+                        <p class="text-muted">
+                            Our recommendations have an 89% confidence match with your preferences.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Load recommendations functionality
+    document.getElementById('refresh-recommendations').addEventListener('click', function() {
+        loadRecommendations();
+    });
+
+    document.getElementById('load-dining').addEventListener('click', function() {
+        loadDiningRecommendations();
+    });
+
+    document.getElementById('load-activities').addEventListener('click', function() {
+        loadActivityRecommendations();
+    });
+
+    document.getElementById('load-services').addEventListener('click', function() {
+        loadServiceRecommendations();
+    });
+
+    async function loadRecommendations() {
+        try {
+            showAlert('Loading fresh recommendations...', 'info');
+            const response = await fetch('/api/recommendations/personalized');
+            const data = await response.json();
+            
+            if (response.ok) {
+                showAlert('Recommendations updated successfully!', 'success');
+                // Update the recommendation sections with new data
+                updateRecommendationSections(data);
+            } else {
+                showAlert('Failed to load recommendations: ' + data.detail, 'error');
+            }
+        } catch (error) {
+            showAlert('Error loading recommendations: ' + error.message, 'error');
+        }
+    }
+
+    async function loadDiningRecommendations() {
+        try {
+            const response = await fetch('/api/recommendations/dining');
+            const data = await response.json();
+            
+            if (response.ok) {
+                showAlert('Dining recommendations loaded!', 'success');
+                // Update dining section
+            } else {
+                showAlert('Failed to load dining recommendations', 'error');
+            }
+        } catch (error) {
+            showAlert('Error loading dining recommendations: ' + error.message, 'error');
+        }
+    }
+
+    async function loadActivityRecommendations() {
+        try {
+            const response = await fetch('/api/recommendations/activities');
+            const data = await response.json();
+            
+            if (response.ok) {
+                showAlert('Activity recommendations loaded!', 'success');
+                // Update activity section
+            } else {
+                showAlert('Failed to load activity recommendations', 'error');
+            }
+        } catch (error) {
+            showAlert('Error loading activity recommendations: ' + error.message, 'error');
+        }
+    }
+
+    async function loadServiceRecommendations() {
+        try {
+            const response = await fetch('/api/recommendations/services');
+            const data = await response.json();
+            
+            if (response.ok) {
+                showAlert('Service recommendations loaded!', 'success');
+                // Update service section
+            } else {
+                showAlert('Failed to load service recommendations', 'error');
+            }
+        } catch (error) {
+            showAlert('Error loading service recommendations: ' + error.message, 'error');
+        }
+    }
+
+    function updateRecommendationSections(data) {
+        // This function would update the recommendation sections with new data
+        // For now, we'll just show a success message
+        console.log('Recommendations data:', data);
+    }
+});
+</script>
+{% endblock %}

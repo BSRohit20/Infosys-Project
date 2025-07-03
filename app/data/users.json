@@ -1,0 +1,81 @@
+[
+  {
+    "user_id": "admin_001",
+    "username": "admin",
+    "email": "admin@luxehospitality.com",
+    "role": "admin",
+    "first_name": "Hotel",
+    "last_name": "Administrator",
+    "created_at": "2024-01-01T08:00:00Z",
+    "last_login": "2024-12-25T14:30:00Z",
+    "is_active": true,
+    "password_hash": "admin123"
+  },
+  {
+    "user_id": "guest_003",
+    "username": "rohit",
+    "email": "rohit@email.com",
+    "role": "customer",
+    "first_name": "Rohit",
+    "last_name": "BS",
+    "created_at": "2025-07-03T10:30:00Z",
+    "last_login": "2025-07-03T10:30:00Z",
+    "is_active": true,
+    "password_hash": "abc123",
+    "guest_id": "guest_003"
+  },
+  {
+    "user_id": "guest_001",
+    "username": "guest_001",
+    "email": "emily.johnson@email.com",
+    "role": "customer",
+    "first_name": "Emily",
+    "last_name": "Johnson",
+    "created_at": "2023-06-15T10:30:00Z",
+    "last_login": "2024-12-20T14:20:00Z",
+    "is_active": true,
+    "password_hash": "guest123",
+    "guest_id": "guest_001"
+  },
+  {
+    "user_id": "guest_002",
+    "username": "guest_002",
+    "email": "michael.chen@email.com",
+    "role": "customer",
+    "first_name": "Michael",
+    "last_name": "Chen",
+    "created_at": "2022-11-20T08:45:00Z",
+    "last_login": "2024-12-22T16:30:00Z",
+    "is_active": true,
+    "password_hash": "guest123",
+    "guest_id": "guest_002"
+  },
+  {
+    "user_id": "guest_004",
+    "username": "sam",
+    "email": "aa4179@srmist.edu.in",
+    "role": "customer",
+    "first_name": "SAM",
+    "last_name": "AK",
+    "created_at": "2025-07-03T06:27:36.564474",
+    "last_login": null,
+    "is_active": true,
+    "password_hash": "sam123",
+    "guest_id": "guest_004",
+    "loyalty_tier": "Standard"
+  },
+  {
+    "user_id": "guest_005",
+    "username": "revanth",
+    "email": "ra6857@srmist.edu.in",
+    "role": "customer",
+    "first_name": "Revanth",
+    "last_name": "Anand",
+    "created_at": "2025-07-03T11:39:44.472597",
+    "last_login": null,
+    "is_active": true,
+    "password_hash": "revanth123",
+    "guest_id": "guest_005",
+    "loyalty_tier": "Gold"
+  }
+]

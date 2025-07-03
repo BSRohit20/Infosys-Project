@@ -1,0 +1,375 @@
+{% extends "base.html" %}
+
+{% block title %}Feedback - AI-Driven Guest Experience{% endblock %}
+
+{% block content %}
+<div class="feedback-page">
+    <!-- Page Header -->
+    <div class="page-header mb-5">
+        <div class="card">
+            <div class="card-body" style="background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-dark) 100%); color: white; border-radius: var(--radius-lg);">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h1 class="mb-3">
+                            <i class="fas fa-comment-dots"></i>
+                            Share Your Feedback
+                        </h1>
+                        <p class="lead mb-0">
+                            Help us improve your experience, {{ current_user.first_name }}. Your feedback matters!
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="feedback-stats">
+                            <div class="stat-item">
+                                <div class="stat-value">4.8</div>
+                                <div class="stat-label">Average Rating</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback Form -->
+    <div class="feedback-form mb-5">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-pen"></i>
+                    Submit New Feedback
+                </h3>
+            </div>
+            <div class="card-body">
+                <form id="feedback-form">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="category" class="form-label">Category</label>
+                            <select class="form-select" id="category" name="category" required>
+                                <option value="">Select category...</option>
+                                <option value="room_service">Room Service</option>
+                                <option value="dining">Dining Experience</option>
+                                <option value="amenities">Hotel Amenities</option>
+                                <option value="staff_service">Staff Service</option>
+                                <option value="cleanliness">Cleanliness</option>
+                                <option value="activities">Activities & Tours</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label for="rating" class="form-label">Overall Rating</label>
+                            <div class="rating-input">
+                                <div class="star-rating" id="star-rating">
+                                    <i class="far fa-star" data-rating="1"></i>
+                                    <i class="far fa-star" data-rating="2"></i>
+                                    <i class="far fa-star" data-rating="3"></i>
+                                    <i class="far fa-star" data-rating="4"></i>
+                                    <i class="far fa-star" data-rating="5"></i>
+                                </div>
+                                <input type="hidden" id="rating" name="rating" required>
+                                <span class="rating-text ms-2">Click to rate</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Brief summary of your feedback" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="comment" class="form-label">Your Feedback</label>
+                        <textarea class="form-control" id="comment" name="comment" rows="4" placeholder="Please share your detailed feedback..." required></textarea>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="location" class="form-label">Location (Optional)</label>
+                            <input type="text" class="form-control" id="location" name="location" placeholder="e.g., Room 205, Restaurant, Pool Area">
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label for="staff_member" class="form-label">Staff Member (Optional)</label>
+                            <input type="text" class="form-control" id="staff_member" name="staff_member" placeholder="Staff member name if applicable">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="anonymous" name="anonymous">
+                            <label class="form-check-label" for="anonymous">
+                                Submit anonymously
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Feedback
+                        </button>
+                        <button type="reset" class="btn btn-outline-secondary">
+                            <i class="fas fa-undo"></i>
+                            Clear Form
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Previous Feedback -->
+    <div class="previous-feedback mb-5">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-history"></i>
+                    Your Previous Feedback
+                </h3>
+            </div>
+            <div class="card-body">
+                <div id="previous-feedback-list">
+                    <div class="feedback-item mb-3 p-3 border rounded">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h5 class="mb-1">Excellent Room Service</h5>
+                                <small class="text-muted">Room Service • December 20, 2024</small>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <span class="ms-2">5/5</span>
+                            </div>
+                        </div>
+                        <p class="mb-2">The room service was outstanding. Food arrived hot and fresh, and the staff was very courteous.</p>
+                        <div class="feedback-status">
+                            <span class="badge bg-success">Resolved</span>
+                            <span class="text-muted ms-2">Thank you for your positive feedback!</span>
+                        </div>
+                    </div>
+
+                    <div class="feedback-item mb-3 p-3 border rounded">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h5 class="mb-1">Pool Area Maintenance</h5>
+                                <small class="text-muted">Amenities • December 18, 2024</small>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="far fa-star text-warning"></i>
+                                <i class="far fa-star text-warning"></i>
+                                <span class="ms-2">3/5</span>
+                            </div>
+                        </div>
+                        <p class="mb-2">The pool area could use some maintenance. Some lounge chairs were broken.</p>
+                        <div class="feedback-status">
+                            <span class="badge bg-info">In Progress</span>
+                            <span class="text-muted ms-2">Maintenance team has been notified. Thank you!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-outline-primary" id="load-more-feedback">
+                    <i class="fas fa-plus"></i>
+                    Load More Feedback
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Sentiment Analysis -->
+    <div class="sentiment-analysis mb-5">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-brain text-info"></i>
+                    AI Sentiment Analysis
+                </h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Your Feedback Trends</h5>
+                        <div class="sentiment-meter mb-3">
+                            <div class="progress">
+                                <div class="progress-bar bg-success" style="width: 75%">75% Positive</div>
+                                <div class="progress-bar bg-warning" style="width: 20%">20% Neutral</div>
+                                <div class="progress-bar bg-danger" style="width: 5%">5% Negative</div>
+                            </div>
+                        </div>
+                        <p class="text-muted">
+                            Overall, your feedback shows high satisfaction with our services.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Areas You Care About Most</h5>
+                        <div class="concern-areas">
+                            <div class="concern-item mb-2">
+                                <span class="badge bg-primary me-2">Room Service</span>
+                                <span class="text-muted">90% satisfaction</span>
+                            </div>
+                            <div class="concern-item mb-2">
+                                <span class="badge bg-success me-2">Staff Service</span>
+                                <span class="text-muted">95% satisfaction</span>
+                            </div>
+                            <div class="concern-item mb-2">
+                                <span class="badge bg-warning me-2">Amenities</span>
+                                <span class="text-muted">70% satisfaction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Star rating functionality
+    const stars = document.querySelectorAll('#star-rating i');
+    const ratingInput = document.getElementById('rating');
+    const ratingText = document.querySelector('.rating-text');
+
+    stars.forEach((star, index) => {
+        star.addEventListener('click', function() {
+            const rating = index + 1;
+            ratingInput.value = rating;
+            ratingText.textContent = `${rating}/5 stars`;
+            
+            // Update star display
+            stars.forEach((s, i) => {
+                if (i < rating) {
+                    s.className = 'fas fa-star text-warning';
+                } else {
+                    s.className = 'far fa-star text-warning';
+                }
+            });
+        });
+
+        star.addEventListener('mouseover', function() {
+            const rating = index + 1;
+            stars.forEach((s, i) => {
+                if (i < rating) {
+                    s.className = 'fas fa-star text-warning';
+                } else {
+                    s.className = 'far fa-star text-warning';
+                }
+            });
+        });
+    });
+
+    // Reset star display on mouse leave
+    document.getElementById('star-rating').addEventListener('mouseleave', function() {
+        const currentRating = parseInt(ratingInput.value) || 0;
+        stars.forEach((star, index) => {
+            if (index < currentRating) {
+                star.className = 'fas fa-star text-warning';
+            } else {
+                star.className = 'far fa-star text-warning';
+            }
+        });
+    });
+
+    // Feedback form submission
+    document.getElementById('feedback-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const feedbackData = {
+            category: formData.get('category'),
+            rating: parseInt(formData.get('rating')),
+            subject: formData.get('subject'),
+            comment: formData.get('comment'),
+            location: formData.get('location') || '',
+            staff_member: formData.get('staff_member') || '',
+            anonymous: formData.get('anonymous') === 'on'
+        };
+
+        // Client-side validation
+        if (!feedbackData.category) {
+            showAlert('Please select a category', 'error');
+            return;
+        }
+        
+        if (!feedbackData.rating || feedbackData.rating < 1 || feedbackData.rating > 5) {
+            showAlert('Please select a rating between 1 and 5 stars', 'error');
+            return;
+        }
+        
+        if (!feedbackData.subject || feedbackData.subject.trim() === '') {
+            showAlert('Please enter a subject for your feedback', 'error');
+            return;
+        }
+        
+        if (!feedbackData.comment || feedbackData.comment.trim() === '') {
+            showAlert('Please enter your feedback comment', 'error');
+            return;
+        }
+
+        console.log('Submitting feedback data:', feedbackData);
+
+        try {
+            const response = await fetch('/api/feedback/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include',
+                body: JSON.stringify(feedbackData)
+            });
+
+            const result = await response.json();
+            console.log('Server response:', result);
+
+            if (response.ok) {
+                showAlert('Feedback submitted successfully! Thank you for your input.', 'success');
+                this.reset();
+                ratingInput.value = '';
+                ratingText.textContent = 'Click to rate';
+                stars.forEach(star => {
+                    star.className = 'far fa-star text-warning';
+                });
+                
+                // Refresh previous feedback list
+                loadPreviousFeedback();
+            } else {
+                showAlert('Failed to submit feedback: ' + (result.detail || 'Unknown error'), 'error');
+            }
+        } catch (error) {
+            console.error('Error submitting feedback:', error);
+            showAlert('Error submitting feedback: ' + error.message, 'error');
+        }
+    });
+
+    // Load more feedback
+    document.getElementById('load-more-feedback').addEventListener('click', function() {
+        loadPreviousFeedback();
+    });
+
+    async function loadPreviousFeedback() {
+        try {
+            const response = await fetch('/api/feedback/my-feedback', {
+                credentials: 'include'
+            });
+            const data = await response.json();
+            
+            if (response.ok) {
+                // Update the previous feedback list
+                showAlert('Feedback history updated!', 'info');
+            } else {
+                showAlert('Failed to load feedback history', 'error');
+            }
+        } catch (error) {
+            showAlert('Error loading feedback history: ' + error.message, 'error');
+        }
+    }
+});
+</script>
+{% endblock %}
