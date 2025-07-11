@@ -1,4 +1,7 @@
+import random
 import asyncio
+import logging
+from typing import Dict, List, Union
 import logging
 from typing import Dict, List, Optional
 from transformers import pipeline, AutoTokenizer, AutoModelForSequenceClassification
@@ -58,7 +61,8 @@ class SentimentAnalysisService:
                 "confidence": confidence,
                 "scores": sentiment_scores,
                 "timestamp": datetime.utcnow().isoformat(),
-                "is_negative": primary_sentiment == "negative" and confidence > 0.7
+                "is_negative": primary_sentiment == "negative" and confidence > 0.7,
+                "model": "distilbert-base-uncased-finetuned-sst-2-english"
             }
             
             # Trigger alert for negative sentiment
@@ -83,11 +87,15 @@ class SentimentAnalysisService:
         """Simple fallback sentiment analysis using keyword matching"""
         positive_keywords = [
             "excellent", "amazing", "wonderful", "great", "fantastic", "love", "perfect",
-            "outstanding", "exceptional", "brilliant", "superb", "awesome", "incredible"
+            "outstanding", "exceptional", "brilliant", "superb", "awesome", "incredible",
+            "good", "nice", "happy", "satisfied", "pleased", "comfortable", "clean",
+            "friendly", "helpful", "professional", "recommend", "beautiful", "relaxing"
         ]
         negative_keywords = [
             "terrible", "awful", "horrible", "hate", "worst", "disappointing", "bad",
-            "poor", "unacceptable", "disgusting", "rude", "slow", "dirty", "broken"
+            "poor", "unacceptable", "disgusting", "rude", "slow", "dirty", "broken",
+            "uncomfortable", "noisy", "expensive", "crowded", "unfriendly", "unhelpful",
+            "unprofessional", "outdated", "smelly", "cold", "hot", "boring"
         ]
         
         text_lower = text.lower()
@@ -113,7 +121,8 @@ class SentimentAnalysisService:
                 "negative": confidence if sentiment == "negative" else 1 - confidence
             },
             "timestamp": datetime.utcnow().isoformat(),
-            "is_negative": sentiment == "negative" and confidence > 0.7
+            "is_negative": sentiment == "negative" and confidence > 0.7,
+            "model": "fallback-keyword-based"
         }
     
     async def _send_slack_alert(self, analysis_result: Dict):

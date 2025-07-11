@@ -908,5 +908,32 @@
     },
     "submitted_at": "2025-07-11T16:28:46.694538",
     "status": "new"
+  },
+  {
+    "feedback_id": "FB_20250711_175047",
+    "guest_id": "guest_005",
+    "guest_name": "Revanth Anand",
+    "guest_username": "revanth",
+    "rating": 4,
+    "subject": "cricket and music was amazing",
+    "comment": "cricket and music was amazing",
+    "category": "activities",
+    "location": "",
+    "staff_member": "",
+    "anonymous": false,
+    "sentiment_analysis": {
+      "text": "cricket and music was amazing",
+      "sentiment": "positive",
+      "confidence": 0.9998787641525269,
+      "scores": {
+        "negative": 0.00012127677473472431,
+        "positive": 0.9998787641525269
+      },
+      "timestamp": "2025-07-11T17:50:47.173048",
+      "is_negative": false,
+      "model": "distilbert-base-uncased-finetuned-sst-2-english"
+    },
+    "submitted_at": "2025-07-11T17:50:47.173048",
+    "status": "new"
   }
 ]

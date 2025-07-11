@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: ai-hospitality-system
+    env: python
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+    startCommand: python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    branch: main
+    healthCheckPath: /
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: PYTHONPATH
+        value: /opt/render/project/src
+      - key: SECRET_KEY
+        generateValue: true
+      - key: HF_API_TOKEN
+        sync: false  # Set this manually in Render dashboard
+      - key: SLACK_WEBHOOK_URL
+        sync: false  # Set this manually in Render dashboard
+    disk:
+      name: model-cache
+      mountPath: /opt/render/project/src/.cache
+      sizeGB: 1
