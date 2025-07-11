@@ -10,9 +10,9 @@ python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
 cryptography==41.0.7
 
-# AI/ML Core (optimized for deployment)
+# AI/ML Core (compatible with Python 3.13)
 transformers==4.36.0
-torch==2.1.1+cpu --extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.7.1
 numpy==1.24.4
 scikit-learn==1.3.2
 
@@ -24,10 +24,5 @@ aiofiles==23.2.1
 # Environment & Config
 python-dotenv==1.0.0
 
-# Optional: Reduce size by removing heavy viz libraries for deployment
-# matplotlib==3.8.2
-# seaborn==0.13.0
-# plotly==5.17.0
-
-# Keep essential only
+# Essential only
 websockets==12.0
