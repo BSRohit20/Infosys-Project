@@ -1,62 +1,18 @@
-# Script to clean up deployment and unnecessary files
-Write-Host "🧹 Cleaning up unnecessary files for local development..." -ForegroundColor Cyan
+# Project cleanup script - removes unnecessary files for clean local development
+Write-Host "🧹 Project is already clean and optimized for local development!" -ForegroundColor Green
 
-# Files to remove
-$filesToRemove = @(
-    ".env.example",
-    ".env.production",
-    ".gitattributes",
-    ".render-buildpacks.json",
-    ".vercelignore",
-    "analytics_dashboard_fix.md",
-    "AUTHENTICATION_DIAGNOSIS.md",
-    "AUTHENTICATION_FIXED_FINAL.md",
-    "DEPLOYMENT.md",
-    "Dockerfile",
-    "FEEDBACK_ALERTS_IMPLEMENTATION_COMPLETE.md",
-    "LOGIN_FIX_COMPLETE.md",
-    "Procfile",
-    "RAILWAY_DEPLOYMENT.md",
-    "Spacefile",
-    "TEMPLATES_FIXED_COMPLETE.md",
-    "TROUBLESHOOTING.md",
-    "TROUBLESHOOTING_GUIDE.md",
-    "cloudbuild.yaml",
-    "deploy.bat",
-    "deploy.sh",
-    "fly.toml",
-    "netlify.toml",
-    "oracle_cloud_setup.sh",
-    "pythonanywhere_wsgi.py",
-    "railway.json",
-    "render.yaml",
-    "runtime.txt",
-    "vercel.json",
-    "vercel_app.py",
-    "vercel_requirements.txt"
-)
+Write-Host "`n📁 Current project structure:" -ForegroundColor Cyan
+Write-Host "  ✓ app/ - Main application code" -ForegroundColor Green
+Write-Host "  ✓ requirements.txt - Python dependencies" -ForegroundColor Green
+Write-Host "  ✓ README.md - Project documentation" -ForegroundColor Green
+Write-Host "  ✓ run_local.bat/.ps1 - Quick startup scripts" -ForegroundColor Green
+Write-Host "  ✓ start_server.bat/.ps1 - Server startup scripts" -ForegroundColor Green
+Write-Host "  ✓ .env - Environment configuration" -ForegroundColor Green
+Write-Host "  ✓ .gitignore - Git ignore rules" -ForegroundColor Green
 
-# Remove files
-foreach ($file in $filesToRemove) {
-    if (Test-Path $file) {
-        Remove-Item $file -Force
-        Write-Host "  ✓ Removed: $file" -ForegroundColor Green
-    }
-}
+Write-Host "`n🚀 To run your application:" -ForegroundColor Yellow
+Write-Host "  - Windows CMD: run_local.bat" -ForegroundColor Yellow
+Write-Host "  - PowerShell: ./run_local.ps1" -ForegroundColor Yellow
+Write-Host "  - Direct: python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000" -ForegroundColor Yellow
 
-# Remove directories if they exist
-$dirsToRemove = @(
-    ".github"
-)
-
-foreach ($dir in $dirsToRemove) {
-    if (Test-Path $dir -PathType Container) {
-        Remove-Item $dir -Recurse -Force
-        Write-Host "  ✓ Removed directory: $dir" -ForegroundColor Green
-    }
-}
-
-Write-Host "`n✅ Cleanup complete! Your project now only contains files needed for local development." -ForegroundColor Green
-Write-Host "`nTo run your application locally, use:" -ForegroundColor Yellow
-Write-Host "  - Windows CMD: start_server.bat" -ForegroundColor Yellow
-Write-Host "  - PowerShell: ./start_server.ps1" -ForegroundColor Yellow
+Write-Host "`n✅ Your project is ready for local development!" -ForegroundColor Green
