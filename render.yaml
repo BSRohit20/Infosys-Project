@@ -3,7 +3,7 @@ services:
     name: ai-hospitality-system
     env: python
     buildCommand: |
-      pip install --upgrade pip
+      pip install --upgrade pip setuptools wheel
       pip install -r requirements-render.txt
     startCommand: python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT
     plan: free
