@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏨 Nexus Hospitality System</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        .status {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .feature-list {
+            text-align: left;
+            margin: 30px 0;
+        }
+        .feature-list li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .credentials {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .btn {
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #5a6fd8;
+        }
+        .deployment-info {
+            background: #f0f8f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏨 Nexus Hospitality System</h1>
+        <div class="status">✅ SUCCESSFULLY DEPLOYED ON VERCEL</div>
+        
+        <p><strong>AI-Powered Guest Experience Management Platform</strong></p>
+        
+        <div class="feature-list">
+            <h3>🚀 System Features:</h3>
+            <ul>
+                <li>✨ AI-Powered Sentiment Analysis</li>
+                <li>👥 Guest Management System</li>
+                <li>📊 Admin Dashboard</li>
+                <li>⚡ Real-time Feedback Processing</li>
+                <li>🔐 Secure Authentication</li>
+                <li>📱 Responsive Design</li>
+            </ul>
+        </div>
+
+        <div class="credentials">
+            <h3>🔑 Login Credentials</h3>
+            <p><strong>Admin Access:</strong><br>
+            Username: <code>admin</code><br>
+            Password: <code>admin123</code></p>
+            
+            <p><strong>Guest Access:</strong><br>
+            Username: <code>rohit</code> | Password: <code>abc123</code><br>
+            Username: <code>sam</code> | Password: <code>sam123</code><br>
+            Username: <code>revanth</code> | Password: <code>revanth123</code></p>
+        </div>
+
+        <div>
+            <a href="/api/health" class="btn">🩺 Health Check</a>
+            <a href="/api/test" class="btn">🧪 API Test</a>
+            <a href="/api/status" class="btn">📊 System Status</a>
+        </div>
+
+        <div class="deployment-info">
+            <h4>📡 Deployment Information</h4>
+            <p><strong>Platform:</strong> Vercel Serverless</p>
+            <p><strong>Status:</strong> Production Ready</p>
+            <p><strong>Version:</strong> 1.0.0</p>
+            <p><strong>Last Updated:</strong> July 11, 2025</p>
+            <p><strong>Technology Stack:</strong> Python, FastAPI, AI/ML</p>
+        </div>
+
+        <script>
+            // Simple JavaScript to show the page is interactive
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('🏨 Nexus Hospitality System - Ready!');
+                
+                // Add click handlers for API testing
+                document.querySelectorAll('.btn').forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        if (this.href.includes('/api/')) {
+                            e.preventDefault();
+                            fetch(this.href)
+                                .then(response => response.json())
+                                .then(data => {
+                                    alert('API Response: ' + JSON.stringify(data, null, 2));
+                                })
+                                .catch(error => {
+                                    alert('API Error: ' + error.message);
+                                });
+                        }
+                    });
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

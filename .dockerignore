@@ -1,0 +1,69 @@
+# Git
+.git
+.gitignore
+README.md
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment files (keep .env.example)
+.env
+
+# Cache directories
+.cache/
+*.cache
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Test files
+tests/
+test_*.py
+*_test.py
+
+# Documentation
+docs/
+
+# Development tools
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Deployment scripts (not needed in container)
+deploy-*.ps1
+deploy-*.sh
+build.sh
+
+# Backup files
+*.bak
+*.backup
+
+# Temporary files
+tmp/
+temp/
+*.tmp
