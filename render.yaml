@@ -2,11 +2,9 @@ services:
   - type: web
     name: ai-hospitality-system
     env: python
-    buildCommand: |
-      pip install --upgrade pip setuptools wheel
-      pip install -r requirements-render.txt
-    startCommand: python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT
     plan: free
+    buildCommand: chmod +x build.sh && ./build.sh
+    startCommand: python3.11 -m uvicorn app.main:app --host 0.0.0.0 --port $PORT
     branch: main
     healthCheckPath: /
     envVars:
@@ -20,6 +18,8 @@ services:
         sync: false  # Set this manually in Render dashboard
       - key: SLACK_WEBHOOK_URL
         sync: false  # Set this manually in Render dashboard
+      - key: PYTHON_VERSION
+        value: "3.11"
     disk:
       name: model-cache
       mountPath: /opt/render/project/src/.cache
