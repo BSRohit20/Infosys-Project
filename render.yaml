@@ -1,12 +1,14 @@
 services:
   - type: web
-    name: ai-hospitality-system
+    name: ai-hospitality-docker
     env: docker
     plan: free
     dockerfilePath: ./Dockerfile
+    dockerCommand: ""
     healthCheckPath: /health
     envVars:
       - key: ENVIRONMENT
         value: production
       - key: SECRET_KEY
         generateValue: true
+    autoDeploy: false

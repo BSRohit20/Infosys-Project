@@ -1,3 +1,14 @@
+# FORCE DOCKER DEPLOYMENT - Exclude all Python buildpack triggers
+requirements.txt
+requirements-render.txt
+requirements-vercel.txt
+requirements_local.txt
+runtime.txt
+Pipfile*
+pyproject.toml
+setup.py
+setup.cfg
+
 # Git
 .git
 .gitignore
